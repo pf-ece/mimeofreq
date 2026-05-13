@@ -13,6 +13,9 @@ using namespace daisysp;
 #define POT_FB 	 A1
 #define POT_TIME A2
 
+// Switch definitions
+#define SWITCH_DEL D1
+
 // ADC channel declarations
 enum AdcChannel {
 	knobOne,
@@ -28,18 +31,28 @@ float mix = 0.5f;
 float feedback_lvl = 0.5f;
 float delay_time = 0.5f;
 
-// ADC declarations
+// ADC function declarations
 void initADC();
 void procADC();
 
+// Switch function declarations
+void initSwitch();
+void procSwitch();
+
 // Declare DelayLine with MAX_DELAY number of samples.
 static DelayLine<float, MAX_DELAY> del_l, del_r;
+
+Switch del_switch;
+
+// Bypass initializations
+bool del_bypass = true;
 
 static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
     float dry_l, dry_r, wet_l, wet_r;
 
     procADC();
+    procSwitch();
 
     // Set Delay time (samples)
     float time_N = delay_time * MAX_DELAY;
@@ -48,21 +61,28 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
 
     for(size_t i = 0; i < size; i++)
     {
-        // Read dry input signal
-        dry_l = in[0][i];
-        dry_r = in[1][i];
+        // Check if delay effect is bypassed
+        if(del_bypass) {
+            out[0][i] = in[0][i];
+            out[1][i] = in[1][i]; 
+        }
+        else {
+            // Read dry input signal
+            dry_l = in[0][i];
+            dry_r = in[1][i];
 
-        // Read previous wet (delayed) signal
-        wet_l = del_l.Read();
-        wet_r = del_r.Read();
+            // Read previous wet (delayed) signal
+            wet_l = del_l.Read();
+            wet_r = del_r.Read();
 
-        // Write next delayed signal (feedback loop)
-        del_l.Write(dry_l + (wet_l * feedback_lvl));
-        del_r.Write(dry_r + (wet_r * feedback_lvl));
+            // Write next delayed signal (feedback loop)
+            del_l.Write(dry_l + (wet_l * feedback_lvl));
+            del_r.Write(dry_r + (wet_r * feedback_lvl));
 
-        // Mix dry/wet signals, write as output
-        out[0][i] = (dry_l * (1.0f - mix)) + (wet_l * mix);
-        out[1][i] = (dry_r * (1.0f - mix)) + (wet_r * mix);
+            // Mix dry/wet signals, write as output
+            out[0][i] = (dry_l * (1.0f - mix)) + (wet_l * mix);
+            out[1][i] = (dry_r * (1.0f - mix)) + (wet_r * mix);
+        }
     }
 }
 
@@ -76,6 +96,7 @@ int main(void)
     // sample_rate = hw.AudioSampleRate();
 
 	initADC();
+    initSwitch();
 
     del_l.Init();
     del_r.Init();
@@ -103,4 +124,19 @@ void procADC()
     mix = fmap(hw.adc.GetFloat(knobOne), 0.0f, 1.0f, Mapping::LINEAR);
     feedback_lvl = fmap(hw.adc.GetFloat(knobTwo), 0.0f, 1.0f, Mapping::LINEAR);
     delay_time = fmap(hw.adc.GetFloat(knobThree), 0.05f, 1.0f, Mapping::LINEAR);
+}
+
+// Switch processing definitions
+void initSwitch()
+{
+    del_switch.Init(SWITCH_DEL, hw.AudioSampleRate()/hw.AudioBlockSize());
+}
+
+void procSwitch()
+{
+    del_switch.Debounce();
+    if(del_switch.RisingEdge()) {
+        del_bypass = !del_bypass;
+        hw.SetLed(!del_bypass);
+    }
 }

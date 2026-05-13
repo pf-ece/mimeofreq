@@ -13,8 +13,11 @@ using namespace daisysp;
 #define POT_FB 	 A1
 #define POT_TIME A2
 
-// Switch definitions
+// Bypass switch definitions
 #define SWITCH_DEL D1
+
+// Mode switch definitions
+#define SWITCH_DEL_REVERSE D3
 
 // ADC channel declarations
 enum AdcChannel {
@@ -44,8 +47,13 @@ static DelayLine<float, MAX_DELAY> del_l, del_r;
 
 Switch del_switch;
 
+Switch del_reverse_switch;
+
 // Bypass initializations
 bool del_bypass = true;
+
+// Mode initializations
+bool del_reverse = false;
 
 static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
@@ -70,7 +78,7 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
             // Read dry input signal
             dry_l = in[0][i];
             dry_r = in[1][i];
-
+            
             // Read previous wet (delayed) signal
             wet_l = del_l.Read();
             wet_r = del_r.Read();
@@ -130,6 +138,8 @@ void procADC()
 void initSwitch()
 {
     del_switch.Init(SWITCH_DEL, hw.AudioSampleRate()/hw.AudioBlockSize());
+
+    del_reverse_switch.Init(SWITCH_DEL_REVERSE, hw.AudioSampleRate()/hw.AudioBlockSize());
 }
 
 void procSwitch()
@@ -137,6 +147,11 @@ void procSwitch()
     del_switch.Debounce();
     if(del_switch.RisingEdge()) {
         del_bypass = !del_bypass;
-        hw.SetLed(!del_bypass);
+    }
+
+    del_reverse_switch.Debounce();
+    if(del_reverse_switch.RisingEdge()) {
+        del_reverse = !del_reverse;
+        hw.SetLed(del_reverse);
     }
 }

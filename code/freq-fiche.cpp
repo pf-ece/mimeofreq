@@ -43,7 +43,7 @@ void initSwitch();
 void procSwitch();
 
 // Declare DelayLine with MAX_DELAY number of samples.
-static DelayLine<float, MAX_DELAY> del_l, del_r;
+static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del_l, del_r;
 
 static OnePole lpf;
 

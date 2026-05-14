@@ -45,6 +45,8 @@ void procSwitch();
 // Declare DelayLine with MAX_DELAY number of samples.
 static DelayLine<float, MAX_DELAY> del_l, del_r;
 
+static OnePole lpf;
+
 Switch del_switch;
 
 Switch del_reverse_switch;
@@ -63,7 +65,7 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
     procSwitch();
 
     // Set Delay time (samples)
-    float time_N = delay_time * MAX_DELAY;
+    float time_N = lpf.Process(delay_time) * MAX_DELAY;
     del_l.SetDelay(time_N);
     del_r.SetDelay(time_N);
 
@@ -108,6 +110,10 @@ int main(void)
 
     del_l.Init();
     del_r.Init();
+
+    lpf.Init();
+    lpf.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
+    lpf.SetFrequency(0.001f);
 
     // Start callback
     hw.StartAudio(AudioCallback);

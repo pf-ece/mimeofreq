@@ -1,8 +1,16 @@
+/** freq-fiche.cpp | Implementation file for overall Freq-Fiche project.
+ *  Author: Patrick F. (pf-ece)
+ *  
+ *  Copyright 2026 pf-ece
+ *  MIT License
+ */
+
 #include "daisysp.h"
 #include "daisy_seed.h"
+#include "dl_reverse.h"
 
 // Set maximum delay time
-#define MAX_DELAY static_cast<size_t>(48000)
+#define MAX_DELAY static_cast<size_t>(96000)
 
 using namespace daisy;
 using namespace daisy::seed;
@@ -44,6 +52,7 @@ void procSwitch();
 
 // Declare DelayLine with MAX_DELAY number of samples.
 static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del_l, del_r;
+static DLReverse<float, MAX_DELAY> DSY_SDRAM_BSS delrev_l, delrev_r;
 
 static OnePole lpf;
 
@@ -68,6 +77,8 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
     float time_N = lpf.Process(delay_time) * MAX_DELAY;
     del_l.SetDelay(time_N);
     del_r.SetDelay(time_N);
+    delrev_l.SetDelayRev(time_N);
+    delrev_r.SetDelayRev(time_N);
 
     for(size_t i = 0; i < size; i++)
     {
@@ -76,11 +87,25 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
             out[0][i] = in[0][i];
             out[1][i] = in[1][i]; 
         }
+        else if(del_reverse) {
+            // Read dry input signal
+            dry_l = in[0][i];
+            dry_r = in[1][i];
+
+            wet_l = delrev_l.ReadRev();
+            wet_r = delrev_r.ReadRev();
+
+            delrev_l.Write(dry_l + (wet_l * feedback_lvl));
+            delrev_r.Write(dry_r + (wet_r * feedback_lvl));
+
+            out[0][i] = (dry_l * (1.0f - mix)) + (wet_l * mix);
+            out[1][i] = (dry_r * (1.0f - mix)) + (wet_r * mix);
+        }
         else {
             // Read dry input signal
             dry_l = in[0][i];
             dry_r = in[1][i];
-            
+
             // Read previous wet (delayed) signal
             wet_l = del_l.Read();
             wet_r = del_r.Read();
@@ -110,6 +135,9 @@ int main(void)
 
     del_l.Init();
     del_r.Init();
+
+    delrev_l.Init();
+    delrev_r.Init();
 
     lpf.Init();
     lpf.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);

@@ -1,10 +1,13 @@
 /** dl_reverse.h | Reverse delay line.
  *  Author: Patrick F. (pf-ece)
- *  Modification of code originally written by Adam Fulford.
+ *  Modification of 'delayline_reverse.h' by Adam Fulford.
  * 
  *  Copyright 2026 pf-ece
  *  Copyright 2021 Adam Fulford
  *  MIT License
+ * 
+ *  /// BUGS & ISSUES /// POSSIBLE ADDITIONS /// & OTHER VERY FUN THINGS TO NOTE ///
+ *  - More comments.
  */
 
 #pragma once

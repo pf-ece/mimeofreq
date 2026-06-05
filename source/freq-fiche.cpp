@@ -9,7 +9,6 @@
  *      - Hold mode is ON via delay mode knob being set to "HOLD".
  *      - Press and release bypass switch for writing, overdubbing & clearing buffer.
  *      - Hold mode is OFF (and all buffers cleared) when delay mode knob is set to a different mode.
- *  - Very likely converting pedal completely into MONO.
  *  - More comments, if needed.
  */
 
@@ -64,12 +63,11 @@ void initSwitch();
 void procSwitch();
 
 // Declare buffers and delay lines with MAX_DELAY number of samples.
-static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del_l, del_r;
-static DLReverse<float, MAX_DELAY> DSY_SDRAM_BSS delrev_l, delrev_r;
-static float DSY_SDRAM_BSS hold_buff_l[MAX_DELAY];
-static float DSY_SDRAM_BSS hold_buff_r[MAX_DELAY];
+static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del;
+static DLReverse<float, MAX_DELAY> DSY_SDRAM_BSS delrev;
+static float DSY_SDRAM_BSS hold_buff[MAX_DELAY];
 
-DLHold delhold_l, delhold_r;
+DLHold delhold;
 
 static OnePole lpf;
 
@@ -87,19 +85,16 @@ bool del_hold = false;
 
 static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
-    float dry_l, dry_r, wet_l, wet_r;
+    float dry, wet;
 
     procADC();
     procSwitch();
 
     // Set Delay time (samples)
     float time_N = lpf.Process(delay_time) * MAX_DELAY;
-    del_l.SetDelay(time_N);
-    del_r.SetDelay(time_N);
-    delrev_l.SetDelayRev(time_N);
-    delrev_r.SetDelayRev(time_N);
-    delhold_l.SetPlaybackSpeed(lpf.Process(delay_time));
-    delhold_r.SetPlaybackSpeed(lpf.Process(delay_time));
+    del.SetDelay(time_N);
+    delrev.SetDelayRev(time_N);
+    delhold.SetPlaybackSpeed(lpf.Process(delay_time));
 
 
     for(size_t i = 0; i < size; i++)
@@ -107,42 +102,32 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
         // Check if delay effect is bypassed
         if(del_bypass) {
             out[0][i] = in[0][i];
-            out[1][i] = in[1][i]; 
         }
         else if(del_reverse) {
             // Read dry input signal
-            dry_l = in[0][i];
-            dry_r = in[1][i];
+            dry = in[0][i];
 
-            wet_l = delrev_l.ReadRev();
-            wet_r = delrev_r.ReadRev();
+            wet = delrev.ReadRev();
 
-            delrev_l.Write(dry_l + (wet_l * feedback_lvl));
-            delrev_r.Write(dry_r + (wet_r * feedback_lvl));
+            delrev.Write(dry + (wet * feedback_lvl));
 
-            out[0][i] = (dry_l * (1.0f - mix)) + (wet_l * mix);
-            out[1][i] = (dry_r * (1.0f - mix)) + (wet_r * mix);
+            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
         }
         else if(del_hold) {
-            out[0][i] = delhold_l.Process(in[0][i]);
-            out[1][i] = delhold_r.Process(in[1][i]);
+            out[0][i] = delhold.Process(in[0][i]);
         }
         else {
             // Read dry input signal
-            dry_l = in[0][i];
-            dry_r = in[1][i];
+            dry = in[0][i];
 
             // Read previous wet (delayed) signal
-            wet_l = del_l.Read();
-            wet_r = del_r.Read();
+            wet = del.Read();
 
             // Write next delayed signal (feedback loop)
-            del_l.Write(dry_l + (wet_l * feedback_lvl));
-            del_r.Write(dry_r + (wet_r * feedback_lvl));
+            del.Write(dry + (wet * feedback_lvl));
 
             // Mix dry/wet signals, write as output
-            out[0][i] = (dry_l * (1.0f - mix)) + (wet_l * mix);
-            out[1][i] = (dry_r * (1.0f - mix)) + (wet_r * mix);
+            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
         }
     }
 }
@@ -159,14 +144,9 @@ int main(void)
 	initADC();
     initSwitch();
 
-    del_l.Init();
-    del_r.Init();
-
-    delrev_l.Init();
-    delrev_r.Init();
-
-    delhold_l.Init(hold_buff_l, MAX_DELAY);
-    delhold_r.Init(hold_buff_r, MAX_DELAY);
+    del.Init();
+    delrev.Init();
+    delhold.Init(hold_buff, MAX_DELAY);
 
     lpf.Init();
     lpf.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
@@ -223,19 +203,16 @@ void procSwitch()
         uint32_t now = System::GetNow(); // in ms
         if(now - last_press < kDoublePressMax) {
         del_hold = false;
-        delhold_l.Clear();
-        delhold_r.Clear();
+        delhold.Clear();
         last_press = 0;
         }
         else {
             del_hold = true;
-            delhold_l.TrigRecord();
-            delhold_r.TrigRecord();
+            delhold.TrigRecord();
             last_press = now;
         }
     }
     if(del_hold_switch.FallingEdge() && del_hold) {
-        delhold_l.TrigRecord();
-        delhold_r.TrigRecord();
+        delhold.TrigRecord();
     }
 }

@@ -124,11 +124,11 @@ class DLHold
             return state_ == State::REC_DUB || state_ == State::REC_FIRST;
         }
 
-        void SetIncrementSize(float inc_set) { inc_size_ = inc_set; }
-
         float Lerp(float start, float end, float t) {
             return start + (end - start) * t;
         }
+
+        void SetIncrementSize(float inc_set) { inc_size_ = inc_set; }
 
         inline void SetPlaybackSpeed(float del_time) {
             constexpr float kMinSpeed = 0.5f;

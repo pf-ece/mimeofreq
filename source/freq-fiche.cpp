@@ -4,18 +4,11 @@
  *  Copyright 2026 pf-ece
  *  MIT License
  * 
- *  /// BUGS & ISSUES /// POSSIBLE ADDITIONS /// & OTHER VERY FUN THINGS TO NOTE ///
- *  - Reroute dl_hold mode to activate and deactivate in this manner:
- *      - Hold mode is ON via delay mode knob being set to "HOLD".
- *      - Press and release bypass switch for writing, overdubbing & clearing buffer.
- *      - Hold mode is OFF (and all buffers cleared) when delay mode knob is set to a different mode.
- *  - More comments, if needed.
  */
 
 #include "daisysp.h"
 #include "daisy_seed.h"
-#include "dl_hold.h"
-#include "dl_reverse.h"
+#include "phaser/Heavy_phaser.hpp"
 
 // Set maximum delay time
 #define MAX_DELAY static_cast<size_t>(96000)
@@ -25,23 +18,24 @@ using namespace daisy::seed;
 using namespace daisysp;
 
 // Potentiometer definitions
-#define POT_MIX  A0
-#define POT_FB 	 A1
-#define POT_TIME A2
+#define POT_MIX   A0
+#define POT_FB    A1
+#define POT_TIME  A2
+#define POT_RATE  A3
+#define POT_DEPTH A4
 
 // Bypass switch definitions
 #define SWITCH_DEL D1
-
-// Mode switch definitions
-#define SWITCH_DEL_REVERSE D3
-#define SWITCH_DEL_HOLD D4
+#define SWITCH_PHS D4
 
 // ADC channel declarations
 enum AdcChannel {
-	knobOne,
-	knobTwo,
-	knobThree,
-	NUM_ADC_CHANNELS
+    knobOne,
+    knobTwo,
+    knobThree,
+    knobFour,
+    knobFive,
+    NUM_ADC_CHANNELS
 };
 
 static DaisySeed hw;
@@ -50,9 +44,8 @@ static DaisySeed hw;
 float mix = 0.5f;
 float feedback_lvl = 0.5f;
 float delay_time = 0.5f;
-
-uint32_t last_press = 0; // in ms
-static constexpr uint32_t kDoublePressMax = 400; // in ms
+float rate = -0.522879f;
+float depth = 0.5f;
 
 // ADC function declarations
 void initADC();
@@ -64,24 +57,19 @@ void procSwitch();
 
 // Declare buffers and delay lines with MAX_DELAY number of samples.
 static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del;
-static DLReverse<float, MAX_DELAY> DSY_SDRAM_BSS delrev;
-static float DSY_SDRAM_BSS hold_buff[MAX_DELAY];
 
-DLHold delhold;
+static Heavy_phaser *phs = nullptr;
 
 static OnePole lpf;
+static OnePole lpf_rate;
+static OnePole lpf_depth;
 
 Switch del_switch;
-
-Switch del_reverse_switch;
-Switch del_hold_switch;
+Switch phs_switch;
 
 // Bypass initializations
 bool del_bypass = true;
-
-// Mode initializations
-bool del_reverse = false;
-bool del_hold = false;
+bool phs_bypass = true;
 
 static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
@@ -90,69 +78,65 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
     procADC();
     procSwitch();
 
-    // Set Delay time (samples)
+    //Set delay time (samples)
     float time_N = lpf.Process(delay_time) * MAX_DELAY;
     del.SetDelay(time_N);
-    delrev.SetDelayRev(time_N);
-    delhold.SetPlaybackSpeed(lpf.Process(delay_time));
 
+    for(size_t i = 0; i < size; i++) {
+            // Check if delay effect is bypassed
+            if(del_bypass) {
+                out[0][i] = in[0][i];
+            }
+            else {
+                // Read dry input signal
+                dry = in[0][i];
 
-    for(size_t i = 0; i < size; i++)
-    {
-        // Check if delay effect is bypassed
-        if(del_bypass) {
-            out[0][i] = in[0][i];
+                // Read previous wet (delayed) signal
+                wet = del.Read();
+
+                // Write next delayed signal (feedback loop)
+                del.Write(dry + (wet * feedback_lvl));
+
+                // Mix dry/wet signals, write as output
+                out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
+            }
         }
-        else if(del_reverse) {
-            // Read dry input signal
-            dry = in[0][i];
-
-            wet = delrev.ReadRev();
-
-            delrev.Write(dry + (wet * feedback_lvl));
-
-            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
-        }
-        else if(del_hold) {
-            out[0][i] = delhold.Process(in[0][i]);
-        }
-        else {
-            // Read dry input signal
-            dry = in[0][i];
-
-            // Read previous wet (delayed) signal
-            wet = del.Read();
-
-            // Write next delayed signal (feedback loop)
-            del.Write(dry + (wet * feedback_lvl));
-
-            // Mix dry/wet signals, write as output
-            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
-        }
+    if(!phs_bypass) {
+        // Phaser effect processing
+        phs->processInline(const_cast<float*>(in[0]), out[0], (int)size);
     }
 }
 
 int main(void)
 {
-    // Initializations
-    // float sample_rate;
+    float sample_rate;
     hw.Configure();
     hw.Init();
     hw.SetAudioBlockSize(4);
-    // sample_rate = hw.AudioSampleRate();
+    sample_rate = hw.AudioSampleRate();
 
-	initADC();
+    initADC();
     initSwitch();
 
     del.Init();
-    delrev.Init();
-    delhold.Init(hold_buff, MAX_DELAY);
 
     lpf.Init();
     lpf.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
     lpf.SetFrequency(0.001f);
 
-    // Start callback
+    lpf_rate.Init();
+    lpf_rate.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
+    lpf_rate.SetFrequency(0.001f);
+
+    lpf_depth.Init();
+    lpf_depth.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
+    lpf_depth.SetFrequency(0.001f);
+
+    phs = new Heavy_phaser(sample_rate);
+
+    phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::RATE, -0.301f);
+    phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::DEPTH, 1.0f);
+
     hw.StartAudio(AudioCallback);
 
     while(1) {}
@@ -161,29 +145,36 @@ int main(void)
 // ADC processing definitions
 void initADC()
 {
-	AdcChannelConfig adcConfig[NUM_ADC_CHANNELS];
-	adcConfig[knobOne].InitSingle(POT_MIX);
-	adcConfig[knobTwo].InitSingle(POT_FB);
-	adcConfig[knobThree].InitSingle(POT_TIME);
+    AdcChannelConfig adcConfig[NUM_ADC_CHANNELS];
+    adcConfig[knobOne].InitSingle(POT_MIX);
+    adcConfig[knobTwo].InitSingle(POT_FB);
+    adcConfig[knobThree].InitSingle(POT_TIME);
+    adcConfig[knobFour].InitSingle(POT_RATE);
+    adcConfig[knobFive].InitSingle(POT_DEPTH);
 
-	hw.adc.Init(adcConfig, NUM_ADC_CHANNELS);
-	hw.adc.Start();
+    hw.adc.Init(adcConfig, NUM_ADC_CHANNELS);
+    hw.adc.Start();
 }
 
 void procADC()
 {
-    mix = fmap(hw.adc.GetFloat(knobOne), 0.0f, 1.0f, Mapping::LINEAR);
-    feedback_lvl = fmap(hw.adc.GetFloat(knobTwo), 0.0f, 1.0f, Mapping::LINEAR);
-    delay_time = fmap(hw.adc.GetFloat(knobThree), 0.05f, 1.0f, Mapping::LINEAR);
+    mix          = fmap(hw.adc.GetFloat(knobOne),   0.0f,  1.0f,  Mapping::LINEAR);
+    feedback_lvl = fmap(hw.adc.GetFloat(knobTwo),   0.0f,  1.0f,  Mapping::LINEAR);
+    delay_time   = fmap(hw.adc.GetFloat(knobThree), 0.05f, 1.0f,  Mapping::LINEAR);
+    rate         = lpf_rate.Process(fmap(hw.adc.GetFloat(knobFour),  -2.0f, 1.0f,  Mapping::LINEAR));
+    depth        = lpf_depth.Process(fmap(hw.adc.GetFloat(knobFive),  0.0f,  1.0f,  Mapping::LINEAR));
+
+    if(!phs_bypass) {
+        phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::RATE, rate);
+        phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::DEPTH, depth);
+    }
 }
 
 // Switch processing definitions
 void initSwitch()
 {
     del_switch.Init(SWITCH_DEL, hw.AudioSampleRate()/hw.AudioBlockSize());
-
-    del_reverse_switch.Init(SWITCH_DEL_REVERSE, hw.AudioSampleRate()/hw.AudioBlockSize());
-    del_hold_switch.Init(SWITCH_DEL_HOLD, hw.AudioSampleRate()/hw.AudioBlockSize());
+    phs_switch.Init(SWITCH_PHS, hw.AudioSampleRate()/hw.AudioBlockSize());
 }
 
 void procSwitch()
@@ -192,27 +183,9 @@ void procSwitch()
     if(del_switch.RisingEdge()) {
         del_bypass = !del_bypass;
     }
-
-    del_reverse_switch.Debounce();
-    if(del_reverse_switch.RisingEdge()) {
-        del_reverse = !del_reverse;
-        hw.SetLed(del_reverse);
-    }
-    del_hold_switch.Debounce();
-    if(del_hold_switch.RisingEdge()) {
-        uint32_t now = System::GetNow(); // in ms
-        if(now - last_press < kDoublePressMax) {
-        del_hold = false;
-        delhold.Clear();
-        last_press = 0;
-        }
-        else {
-            del_hold = true;
-            delhold.TrigRecord();
-            last_press = now;
-        }
-    }
-    if(del_hold_switch.FallingEdge() && del_hold) {
-        delhold.TrigRecord();
+    phs_switch.Debounce();
+    if(phs_switch.RisingEdge()) {
+        phs_bypass = !phs_bypass;
+        hw.SetLed(!phs_bypass);
     }
 }

@@ -3,7 +3,6 @@
  *  
  *  Copyright 2026 pf-ece
  *  MIT License
- * 
  */
 
 #include "daisysp.h"
@@ -78,32 +77,50 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
     procADC();
     procSwitch();
 
-    //Set delay time (samples)
+    // Set delay time (samples)
     float time_N = lpf.Process(delay_time) * MAX_DELAY;
     del.SetDelay(time_N);
-
-    for(size_t i = 0; i < size; i++) {
-            // Check if delay effect is bypassed
-            if(del_bypass) {
-                out[0][i] = in[0][i];
-            }
-            else {
-                // Read dry input signal
+    
+    // COMBO
+    if(!phs_bypass && !del_bypass) {
+        // DELAY into PHASER
+        static float delayed[4];
+        for(size_t i = 0; i < size; i++) {
                 dry = in[0][i];
-
-                // Read previous wet (delayed) signal
                 wet = del.Read();
-
-                // Write next delayed signal (feedback loop)
                 del.Write(dry + (wet * feedback_lvl));
-
-                // Mix dry/wet signals, write as output
-                out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
-            }
+                delayed[i] = (dry * (1.0f - mix)) + (wet * mix);
         }
-    if(!phs_bypass) {
+        phs->processInline(const_cast<float*>(delayed), out[0], (int)size);
+        // PHASER into DELAY
+            // Coming soon! (Along with SPDT ON-ON switch functionality)
+    }
+    // DELAY
+    else if(!del_bypass) {
+        for(size_t i = 0; i < size; i++) {
+            // Read dry input signal
+            dry = in[0][i];
+
+            // Read previous wet (delayed) signal
+            wet = del.Read();
+
+            // Write next delayed signal (feedback loop)
+            del.Write(dry + (wet * feedback_lvl));
+
+            // Mix dry/wet signals, write as output
+            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
+            }
+    }
+    // PHASER
+    else if(!phs_bypass) {
         // Phaser effect processing
         phs->processInline(const_cast<float*>(in[0]), out[0], (int)size);
+    }
+    // NONE
+    else {
+        for(size_t i = 0; i < size; i++) {
+            out[0][i] = in[0][i];
+        }
     }
 }
 

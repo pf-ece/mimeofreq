@@ -27,6 +27,10 @@ using namespace daisysp;
 #define SWITCH_DEL D1
 #define SWITCH_PHS D4
 
+// Combo switch definitions
+#define SPDT_A D10
+#define SPDT_B D12
+
 // ADC channel declarations
 enum AdcChannel {
     knobOne,
@@ -84,7 +88,7 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
     // COMBO
     if(!phs_bypass && !del_bypass) {
         // DELAY into PHASER
-        static float delayed[4];
+        /* static float delayed[4];
         for(size_t i = 0; i < size; i++) {
                 dry = in[0][i];
                 wet = del.Read();
@@ -92,8 +96,16 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
                 delayed[i] = (dry * (1.0f - mix)) + (wet * mix);
         }
         phs->processInline(const_cast<float*>(delayed), out[0], (int)size);
+        */
         // PHASER into DELAY
-            // Coming soon! (Along with SPDT ON-ON switch functionality)
+        static float phased[4];
+        phs->processInline(const_cast<float*>(in[0]), phased, (int)size);
+        for(size_t i = 0; i < size; i++) {
+            dry = phased[i];
+            wet = del.Read();
+            del.Write(dry + (wet * feedback_lvl));
+            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
+        }
     }
     // DELAY
     else if(!del_bypass) {

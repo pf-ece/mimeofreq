@@ -58,21 +58,29 @@ void procADC();
 void initSwitch();
 void procSwitch();
 
-// Declare buffers and delay lines with MAX_DELAY number of samples.
+// Effect objects
 static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del;
-
 static Heavy_phaser *phs = nullptr;
 
+// Block-size intermediate arrays
+static float delayed[4];
+static float phased[4];
+
+// Low-pass filters
 static OnePole lpf;
 static OnePole lpf_rate;
 static OnePole lpf_depth;
 
+// Switch objects
 Switch del_switch;
 Switch phs_switch;
+Switch3 spdt;
 
 // Bypass initializations
 bool del_bypass = true;
 bool phs_bypass = true;
+
+int spdt_state = 0;
 
 static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
@@ -87,24 +95,37 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
     
     // COMBO
     if(!phs_bypass && !del_bypass) {
-        // DELAY into PHASER
-        /* static float delayed[4];
-        for(size_t i = 0; i < size; i++) {
-                dry = in[0][i];
-                wet = del.Read();
-                del.Write(dry + (wet * feedback_lvl));
-                delayed[i] = (dry * (1.0f - mix)) + (wet * mix);
-        }
-        phs->processInline(const_cast<float*>(delayed), out[0], (int)size);
-        */
-        // PHASER into DELAY
-        static float phased[4];
-        phs->processInline(const_cast<float*>(in[0]), phased, (int)size);
-        for(size_t i = 0; i < size; i++) {
-            dry = phased[i];
-            wet = del.Read();
-            del.Write(dry + (wet * feedback_lvl));
-            out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
+        switch(spdt_state) {
+            case 1:
+                // DELAY into PHASER
+                for(size_t i = 0; i < size; i++) {
+                        dry = in[0][i];
+                        wet = del.Read();
+                        del.Write(dry + (wet * feedback_lvl));
+                        delayed[i] = (dry * (1.0f - mix)) + (wet * mix);
+                }
+                phs->processInline(const_cast<float*>(delayed), out[0], (int)size);
+                break;
+            case 2:
+                // PHASER into DELAY
+                phs->processInline(const_cast<float*>(in[0]), phased, (int)size);
+                for(size_t i = 0; i < size; i++) {
+                    dry = phased[i];
+                    wet = del.Read();
+                    del.Write(dry + (wet * feedback_lvl));
+                    out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
+                }
+                break;
+            default:
+                // PHASER into DELAY (DEFAULT)
+                phs->processInline(const_cast<float*>(in[0]), phased, (int)size);
+                for(size_t i = 0; i < size; i++) {
+                    dry = phased[i];
+                    wet = del.Read();
+                    del.Write(dry + (wet * feedback_lvl));
+                    out[0][i] = (dry * (1.0f - mix)) + (wet * mix);
+                }
+                break;
         }
     }
     // DELAY
@@ -204,6 +225,8 @@ void initSwitch()
 {
     del_switch.Init(SWITCH_DEL, hw.AudioSampleRate()/hw.AudioBlockSize());
     phs_switch.Init(SWITCH_PHS, hw.AudioSampleRate()/hw.AudioBlockSize());
+
+    spdt.Init(SPDT_A, SPDT_B);
 }
 
 void procSwitch()
@@ -215,6 +238,7 @@ void procSwitch()
     phs_switch.Debounce();
     if(phs_switch.RisingEdge()) {
         phs_bypass = !phs_bypass;
-        hw.SetLed(!phs_bypass);
     }
+
+    spdt_state = spdt.Read();
 }

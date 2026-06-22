@@ -1,3 +1,3 @@
 # Freq-Fiche
 
-Digital delay guitar pedal. Further additions pending.
+Digital delay + phaser combination guitar pedal. Further additions pending.

@@ -25,11 +25,15 @@ using namespace daisysp;
 
 // Bypass switch definitions
 #define SWITCH_DEL D1
-#define SWITCH_PHS D4
+#define SWITCH_PHS D2
+
+// Bypass LED definitions
+#define LED_DEL D3
+#define LED_PHS D4
 
 // Combo switch definitions
-#define SPDT_A D10
-#define SPDT_B D12
+#define SPDT_A D9
+#define SPDT_B D10
 
 // ADC channel declarations
 enum AdcChannel {

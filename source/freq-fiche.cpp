@@ -67,8 +67,8 @@ static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del;
 static Heavy_phaser *phs = nullptr;
 
 // Block-size intermediate arrays
-static float delayed[4];
-static float phased[4];
+static float delayed[2];
+static float phased[2];
 
 // Low-pass filters
 static OnePole lpf;
@@ -166,7 +166,7 @@ int main(void)
     float sample_rate;
     hw.Configure();
     hw.Init();
-    hw.SetAudioBlockSize(4);
+    hw.SetAudioBlockSize(2);
     sample_rate = hw.AudioSampleRate();
 
     initADC();

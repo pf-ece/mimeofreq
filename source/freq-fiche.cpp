@@ -24,16 +24,12 @@ using namespace daisysp;
 #define POT_DEPTH A4
 
 // Bypass switch definitions
-#define SWITCH_DEL D1
+#define SWITCH_DEL D1 // Change these assignments when ready
 #define SWITCH_PHS D2
 
-// Bypass LED definitions
-#define LED_DEL D3
-#define LED_PHS D4
-
 // Combo switch definitions
-#define SPDT_A D9
-#define SPDT_B D10
+#define SPDT_A D10
+#define SPDT_B D12
 
 // ADC channel declarations
 enum AdcChannel {
@@ -51,7 +47,7 @@ static DaisySeed hw;
 float mix = 0.5f;
 float feedback_lvl = 0.5f;
 float delay_time = 0.5f;
-float rate = -0.522879f;
+float rate = 0.316f;
 float depth = 0.5f;
 
 // ADC function declarations
@@ -185,11 +181,11 @@ int main(void)
     lpf_depth.Init();
     lpf_depth.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
     lpf_depth.SetFrequency(0.001f);
-
+    
     phs = new Heavy_phaser(sample_rate);
 
-    phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::RATE, -0.301f);
-    phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::DEPTH, 1.0f);
+    phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::RATE, 0.5f);
+    phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::DEPTH, 0.5f);
 
     hw.StartAudio(AudioCallback);
 
@@ -215,7 +211,7 @@ void procADC()
     mix          = fmap(hw.adc.GetFloat(knobOne),   0.0f,  1.0f,  Mapping::LINEAR);
     feedback_lvl = fmap(hw.adc.GetFloat(knobTwo),   0.0f,  1.0f,  Mapping::LINEAR);
     delay_time   = fmap(hw.adc.GetFloat(knobThree), 0.05f, 1.0f,  Mapping::LINEAR);
-    rate         = lpf_rate.Process(fmap(hw.adc.GetFloat(knobFour),  -2.0f, 1.0f,  Mapping::LINEAR));
+    rate         = lpf_rate.Process(fmap(hw.adc.GetFloat(knobFour),  0.01f, 10.0f,  Mapping::LOG));
     depth        = lpf_depth.Process(fmap(hw.adc.GetFloat(knobFive),  0.0f,  1.0f,  Mapping::LINEAR));
 
     if(!phs_bypass) {
@@ -242,6 +238,7 @@ void procSwitch()
     phs_switch.Debounce();
     if(phs_switch.RisingEdge()) {
         phs_bypass = !phs_bypass;
+        hw.SetLed(!phs_bypass);
     }
 
     spdt_state = spdt.Read();

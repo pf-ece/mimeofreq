@@ -35,13 +35,12 @@
 
 // object includes
 #include "HeavyContext.hpp"
-#include "HvSignalDel1.h"
-#include "HvMath.h"
-#include "HvControlExpr.h"
-#include "HvSignalRPole.h"
-#include "HvSignalVar.h"
 #include "HvSignalPhasor.h"
+#include "HvSignalRPole.h"
+#include "HvSignalDel1.h"
+#include "HvSignalVar.h"
 #include "HvSignalLine.h"
+#include "HvMath.h"
 
 class Heavy_phaser : public HeavyContext {
 
@@ -83,34 +82,31 @@ class Heavy_phaser : public HeavyContext {
 
 
   // static sendMessage functions
-  static void cExpr_XpcK23bH_sendMessage(HeavyContextInterface *, int, const HvMessage *);
-  static void cMsg_0X0y13ff_sendMessage(HeavyContextInterface *, int, const HvMessage *);
-  static void cMsg_KlHXQjnU_sendMessage(HeavyContextInterface *, int, const HvMessage *);
-  static void cReceive_eJu4EkNt_sendMessage(HeavyContextInterface *, int, const HvMessage *);
-  static void cReceive_jow7NXaD_sendMessage(HeavyContextInterface *, int, const HvMessage *);
+  static void cMsg_M7MJo2pu_sendMessage(HeavyContextInterface *, int, const HvMessage *);
+  static void cMsg_O8bRAXxY_sendMessage(HeavyContextInterface *, int, const HvMessage *);
+  static void cReceive_5oqjFb5U_sendMessage(HeavyContextInterface *, int, const HvMessage *);
+  static void cReceive_a3cnplfk_sendMessage(HeavyContextInterface *, int, const HvMessage *);
 
   // objects
-  SignalLine sLine_qeXKzbxc;
-  SignalPhasor sPhasor_3hdjiZHf;
-  SignalLine sLine_LXlaf5cj;
-  SignalDel1 sDel1_6u9lQDNR;
-  SignalRPole sRPole_3K9bHEOE;
-  SignalDel1 sDel1_t53bVmLz;
-  SignalRPole sRPole_rXmkpJhH;
-  SignalDel1 sDel1_ajfnNLAo;
-  SignalRPole sRPole_KNL9fPp8;
-  SignalDel1 sDel1_oIsdt3Bx;
-  SignalRPole sRPole_a7PQTxT6;
-  SignalDel1 sDel1_Lzwnd3ZM;
-  SignalRPole sRPole_umCaYVMA;
-  SignalDel1 sDel1_qxR8FvVS;
-  SignalRPole sRPole_rIJQd0fD;
-  SignalDel1 sDel1_JUQf4K4j;
-  SignalRPole sRPole_0uGDZeXd;
-  SignalDel1 sDel1_lHoRuRrs;
-  SignalRPole sRPole_cKtfvEsk;
-  ControlExpr cExpr_XpcK23bH;
-  static float cExpr_XpcK23bH_evaluate(const float* args);
+  SignalLine sLine_U8c3Yo0Z;
+  SignalPhasor sPhasor_yxQNBGeu;
+  SignalLine sLine_ACF2wbvz;
+  SignalDel1 sDel1_bkFf1x16;
+  SignalRPole sRPole_iaHeQuXe;
+  SignalDel1 sDel1_l4mWbH65;
+  SignalRPole sRPole_tnw1Pp7d;
+  SignalDel1 sDel1_z9MlL7iD;
+  SignalRPole sRPole_q0deNXaC;
+  SignalDel1 sDel1_nAfabgIH;
+  SignalRPole sRPole_Y5CnTFLo;
+  SignalDel1 sDel1_U3jq9cYN;
+  SignalRPole sRPole_k8A97lVH;
+  SignalDel1 sDel1_PIQ0ApGU;
+  SignalRPole sRPole_p9Ylicgn;
+  SignalDel1 sDel1_Hf1p2wLy;
+  SignalRPole sRPole_5zfFREnP;
+  SignalDel1 sDel1_Qf4nGYdF;
+  SignalRPole sRPole_3nOvOy3q;
 };
 
 #endif // _HEAVY_CONTEXT_PHASER_HPP_

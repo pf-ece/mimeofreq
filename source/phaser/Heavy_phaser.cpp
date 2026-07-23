@@ -83,31 +83,30 @@ extern "C" {
 
 Heavy_phaser::Heavy_phaser(double sampleRate, int poolKb, int inQueueKb, int outQueueKb)
     : HeavyContext(sampleRate, poolKb, inQueueKb, outQueueKb) {
-  numBytes += sLine_init(&sLine_qeXKzbxc);
-  numBytes += sPhasor_init(&sPhasor_3hdjiZHf, sampleRate);
-  numBytes += sLine_init(&sLine_LXlaf5cj);
-  numBytes += sDel1_init(&sDel1_6u9lQDNR);
-  numBytes += sRPole_init(&sRPole_3K9bHEOE);
-  numBytes += sDel1_init(&sDel1_t53bVmLz);
-  numBytes += sRPole_init(&sRPole_rXmkpJhH);
-  numBytes += sDel1_init(&sDel1_ajfnNLAo);
-  numBytes += sRPole_init(&sRPole_KNL9fPp8);
-  numBytes += sDel1_init(&sDel1_oIsdt3Bx);
-  numBytes += sRPole_init(&sRPole_a7PQTxT6);
-  numBytes += sDel1_init(&sDel1_Lzwnd3ZM);
-  numBytes += sRPole_init(&sRPole_umCaYVMA);
-  numBytes += sDel1_init(&sDel1_qxR8FvVS);
-  numBytes += sRPole_init(&sRPole_rIJQd0fD);
-  numBytes += sDel1_init(&sDel1_JUQf4K4j);
-  numBytes += sRPole_init(&sRPole_0uGDZeXd);
-  numBytes += sDel1_init(&sDel1_lHoRuRrs);
-  numBytes += sRPole_init(&sRPole_cKtfvEsk);
-  numBytes += cExpr_init(&cExpr_XpcK23bH, &Heavy_phaser::cExpr_XpcK23bH_evaluate);
+  numBytes += sLine_init(&sLine_U8c3Yo0Z);
+  numBytes += sPhasor_init(&sPhasor_yxQNBGeu, sampleRate);
+  numBytes += sLine_init(&sLine_ACF2wbvz);
+  numBytes += sDel1_init(&sDel1_bkFf1x16);
+  numBytes += sRPole_init(&sRPole_iaHeQuXe);
+  numBytes += sDel1_init(&sDel1_l4mWbH65);
+  numBytes += sRPole_init(&sRPole_tnw1Pp7d);
+  numBytes += sDel1_init(&sDel1_z9MlL7iD);
+  numBytes += sRPole_init(&sRPole_q0deNXaC);
+  numBytes += sDel1_init(&sDel1_nAfabgIH);
+  numBytes += sRPole_init(&sRPole_Y5CnTFLo);
+  numBytes += sDel1_init(&sDel1_U3jq9cYN);
+  numBytes += sRPole_init(&sRPole_k8A97lVH);
+  numBytes += sDel1_init(&sDel1_PIQ0ApGU);
+  numBytes += sRPole_init(&sRPole_p9Ylicgn);
+  numBytes += sDel1_init(&sDel1_Hf1p2wLy);
+  numBytes += sRPole_init(&sRPole_5zfFREnP);
+  numBytes += sDel1_init(&sDel1_Qf4nGYdF);
+  numBytes += sRPole_init(&sRPole_3nOvOy3q);
   
 }
 
 Heavy_phaser::~Heavy_phaser() {
-  cExpr_free(&cExpr_XpcK23bH);
+  // nothing to free
 }
 
 HvTable *Heavy_phaser::getTableForHash(hv_uint32_t tableHash) {
@@ -117,11 +116,11 @@ HvTable *Heavy_phaser::getTableForHash(hv_uint32_t tableHash) {
 void Heavy_phaser::scheduleMessageForReceiver(hv_uint32_t receiverHash, HvMessage *m) {
   switch (receiverHash) {
     case 0xAB90C33D: { // depth
-      mq_addMessageByTimestamp(&mq, m, 0, &cReceive_jow7NXaD_sendMessage);
+      mq_addMessageByTimestamp(&mq, m, 0, &cReceive_5oqjFb5U_sendMessage);
       break;
     }
     case 0x6AA9FD2E: { // rate
-      mq_addMessageByTimestamp(&mq, m, 0, &cReceive_eJu4EkNt_sendMessage);
+      mq_addMessageByTimestamp(&mq, m, 0, &cReceive_a3cnplfk_sendMessage);
       break;
     }
     default: return;
@@ -144,9 +143,9 @@ int Heavy_phaser::getParameterInfo(int index, HvParameterInfo *info) {
         info->name = "rate";
         info->hash = 0x6AA9FD2E;
         info->type = HvParameterType::HV_PARAM_TYPE_PARAMETER_IN;
-        info->minVal = -2.0f;
+        info->minVal = 0.0f;
         info->maxVal = 1.0f;
-        info->defaultVal = -0.522879f;
+        info->defaultVal = 0.5f;
         break;
       }
       default: {
@@ -170,38 +169,30 @@ int Heavy_phaser::getParameterInfo(int index, HvParameterInfo *info) {
  */
 
 
-void Heavy_phaser::cExpr_XpcK23bH_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *m) {
-  cMsg_0X0y13ff_sendMessage(_c, 0, m);
-}
-
-float Heavy_phaser::cExpr_XpcK23bH_evaluate(const float* args) {
-  	return hv_pow_f(10 , ((float)(args[0])));
-}
-
-void Heavy_phaser::cMsg_0X0y13ff_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *const n) {
+void Heavy_phaser::cMsg_M7MJo2pu_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *const n) {
   HvMessage *m = nullptr;
   m = HV_MESSAGE_ON_STACK(2);
   msg_init(m, 2, msg_getTimestamp(n));
   msg_setElementToFrom(m, 0, n, 0);
   msg_setFloat(m, 1, 20.0f);
-  sLine_onMessage(_c, &Context(_c)->sLine_qeXKzbxc, 0, m, NULL);
+  sLine_onMessage(_c, &Context(_c)->sLine_U8c3Yo0Z, 0, m, NULL);
 }
 
-void Heavy_phaser::cMsg_KlHXQjnU_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *const n) {
+void Heavy_phaser::cMsg_O8bRAXxY_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *const n) {
   HvMessage *m = nullptr;
   m = HV_MESSAGE_ON_STACK(2);
   msg_init(m, 2, msg_getTimestamp(n));
   msg_setElementToFrom(m, 0, n, 0);
   msg_setFloat(m, 1, 20.0f);
-  sLine_onMessage(_c, &Context(_c)->sLine_LXlaf5cj, 0, m, NULL);
+  sLine_onMessage(_c, &Context(_c)->sLine_ACF2wbvz, 0, m, NULL);
 }
 
-void Heavy_phaser::cReceive_eJu4EkNt_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *m) {
-  cExpr_onMessage(_c, &Context(_c)->cExpr_XpcK23bH, 0, m, &cExpr_XpcK23bH_sendMessage);
+void Heavy_phaser::cReceive_5oqjFb5U_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *m) {
+  cMsg_O8bRAXxY_sendMessage(_c, 0, m);
 }
 
-void Heavy_phaser::cReceive_jow7NXaD_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *m) {
-  cMsg_KlHXQjnU_sendMessage(_c, 0, m);
+void Heavy_phaser::cReceive_a3cnplfk_sendMessage(HeavyContextInterface *_c, int letIn, const HvMessage *m) {
+  cMsg_M7MJo2pu_sendMessage(_c, 0, m);
 }
 
 
@@ -260,8 +251,8 @@ int Heavy_phaser::process(float **inputBuffers, float **outputBuffers, int n) {
     __hv_zero_f(VOf(O0));
 
     // process all signal functions
-    __hv_line_f(&sLine_qeXKzbxc, VOf(Bf0));
-    __hv_phasor_f(&sPhasor_3hdjiZHf, VIf(Bf0), VOf(Bf0));
+    __hv_line_f(&sLine_U8c3Yo0Z, VOf(Bf0));
+    __hv_phasor_f(&sPhasor_yxQNBGeu, VIf(Bf0), VOf(Bf0));
     __hv_var_k_f(VOf(Bf1), 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f);
     __hv_sub_f(VIf(Bf0), VIf(Bf1), VOf(Bf1));
     __hv_abs_f(VIf(Bf1), VOf(Bf1));
@@ -280,48 +271,48 @@ int Heavy_phaser::process(float **inputBuffers, float **outputBuffers, int n) {
     __hv_add_f(VIf(Bf1), VIf(Bf3), VOf(Bf3));
     __hv_var_k_f(VOf(Bf1), 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f);
     __hv_mul_f(VIf(Bf3), VIf(Bf1), VOf(Bf1));
-    __hv_line_f(&sLine_LXlaf5cj, VOf(Bf3));
+    __hv_line_f(&sLine_ACF2wbvz, VOf(Bf3));
     __hv_mul_f(VIf(Bf1), VIf(Bf3), VOf(Bf3));
-    __hv_del1_f(&sDel1_6u9lQDNR, VIf(I0), VOf(Bf1));
+    __hv_del1_f(&sDel1_bkFf1x16, VIf(I0), VOf(Bf1));
     __hv_mul_f(VIf(I0), VIf(Bf3), VOf(Bf0));
     __hv_sub_f(VIf(Bf1), VIf(Bf0), VOf(Bf0));
     __hv_neg_f(VIf(Bf3), VOf(Bf1));
-    __hv_rpole_f(&sRPole_3K9bHEOE, VIf(Bf0), VIf(Bf1), VOf(Bf1));
-    __hv_del1_f(&sDel1_t53bVmLz, VIf(Bf1), VOf(Bf0));
+    __hv_rpole_f(&sRPole_iaHeQuXe, VIf(Bf0), VIf(Bf1), VOf(Bf1));
+    __hv_del1_f(&sDel1_l4mWbH65, VIf(Bf1), VOf(Bf0));
     __hv_mul_f(VIf(Bf1), VIf(Bf3), VOf(Bf1));
     __hv_sub_f(VIf(Bf0), VIf(Bf1), VOf(Bf1));
     __hv_neg_f(VIf(Bf3), VOf(Bf0));
-    __hv_rpole_f(&sRPole_rXmkpJhH, VIf(Bf1), VIf(Bf0), VOf(Bf0));
-    __hv_del1_f(&sDel1_ajfnNLAo, VIf(Bf0), VOf(Bf1));
+    __hv_rpole_f(&sRPole_tnw1Pp7d, VIf(Bf1), VIf(Bf0), VOf(Bf0));
+    __hv_del1_f(&sDel1_z9MlL7iD, VIf(Bf0), VOf(Bf1));
     __hv_mul_f(VIf(Bf0), VIf(Bf3), VOf(Bf0));
     __hv_sub_f(VIf(Bf1), VIf(Bf0), VOf(Bf0));
     __hv_neg_f(VIf(Bf3), VOf(Bf1));
-    __hv_rpole_f(&sRPole_KNL9fPp8, VIf(Bf0), VIf(Bf1), VOf(Bf1));
-    __hv_del1_f(&sDel1_oIsdt3Bx, VIf(Bf1), VOf(Bf0));
+    __hv_rpole_f(&sRPole_q0deNXaC, VIf(Bf0), VIf(Bf1), VOf(Bf1));
+    __hv_del1_f(&sDel1_nAfabgIH, VIf(Bf1), VOf(Bf0));
     __hv_mul_f(VIf(Bf1), VIf(Bf3), VOf(Bf1));
     __hv_sub_f(VIf(Bf0), VIf(Bf1), VOf(Bf1));
     __hv_neg_f(VIf(Bf3), VOf(Bf0));
-    __hv_rpole_f(&sRPole_a7PQTxT6, VIf(Bf1), VIf(Bf0), VOf(Bf0));
-    __hv_del1_f(&sDel1_Lzwnd3ZM, VIf(Bf0), VOf(Bf1));
+    __hv_rpole_f(&sRPole_Y5CnTFLo, VIf(Bf1), VIf(Bf0), VOf(Bf0));
+    __hv_del1_f(&sDel1_U3jq9cYN, VIf(Bf0), VOf(Bf1));
     __hv_mul_f(VIf(Bf0), VIf(Bf3), VOf(Bf0));
     __hv_sub_f(VIf(Bf1), VIf(Bf0), VOf(Bf0));
     __hv_neg_f(VIf(Bf3), VOf(Bf1));
-    __hv_rpole_f(&sRPole_umCaYVMA, VIf(Bf0), VIf(Bf1), VOf(Bf1));
-    __hv_del1_f(&sDel1_qxR8FvVS, VIf(Bf1), VOf(Bf0));
+    __hv_rpole_f(&sRPole_k8A97lVH, VIf(Bf0), VIf(Bf1), VOf(Bf1));
+    __hv_del1_f(&sDel1_PIQ0ApGU, VIf(Bf1), VOf(Bf0));
     __hv_mul_f(VIf(Bf1), VIf(Bf3), VOf(Bf1));
     __hv_sub_f(VIf(Bf0), VIf(Bf1), VOf(Bf1));
     __hv_neg_f(VIf(Bf3), VOf(Bf0));
-    __hv_rpole_f(&sRPole_rIJQd0fD, VIf(Bf1), VIf(Bf0), VOf(Bf0));
-    __hv_del1_f(&sDel1_JUQf4K4j, VIf(Bf0), VOf(Bf1));
+    __hv_rpole_f(&sRPole_p9Ylicgn, VIf(Bf1), VIf(Bf0), VOf(Bf0));
+    __hv_del1_f(&sDel1_Hf1p2wLy, VIf(Bf0), VOf(Bf1));
     __hv_mul_f(VIf(Bf0), VIf(Bf3), VOf(Bf0));
     __hv_sub_f(VIf(Bf1), VIf(Bf0), VOf(Bf0));
     __hv_neg_f(VIf(Bf3), VOf(Bf1));
-    __hv_rpole_f(&sRPole_0uGDZeXd, VIf(Bf0), VIf(Bf1), VOf(Bf1));
-    __hv_del1_f(&sDel1_lHoRuRrs, VIf(Bf1), VOf(Bf0));
+    __hv_rpole_f(&sRPole_5zfFREnP, VIf(Bf0), VIf(Bf1), VOf(Bf1));
+    __hv_del1_f(&sDel1_Qf4nGYdF, VIf(Bf1), VOf(Bf0));
     __hv_mul_f(VIf(Bf1), VIf(Bf3), VOf(Bf1));
     __hv_sub_f(VIf(Bf0), VIf(Bf1), VOf(Bf1));
     __hv_neg_f(VIf(Bf3), VOf(Bf3));
-    __hv_rpole_f(&sRPole_cKtfvEsk, VIf(Bf1), VIf(Bf3), VOf(Bf3));
+    __hv_rpole_f(&sRPole_3nOvOy3q, VIf(Bf1), VIf(Bf3), VOf(Bf3));
     __hv_add_f(VIf(Bf3), VIf(I0), VOf(Bf3));
     __hv_var_k_f(VOf(Bf1), 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f);
     __hv_mul_f(VIf(Bf3), VIf(Bf1), VOf(Bf1));

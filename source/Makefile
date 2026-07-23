@@ -6,8 +6,7 @@ CPP_SOURCES = freq-fiche.cpp \
 			  phaser/Heavy_phaser.cpp \
 			  phaser/HeavyContext.cpp \
 			  phaser/HvHeavy.cpp
-C_SOURCES =   phaser/HvControlExpr.c \
-			  phaser/HvLightPipe.c \
+C_SOURCES =	  phaser/HvLightPipe.c \
 			  phaser/HvMessage.c \
 			  phaser/HvMessagePool.c \
 			  phaser/HvMessageQueue.c \

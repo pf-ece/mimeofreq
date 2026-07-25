@@ -1368,7 +1368,7 @@
 				)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "10k"
 			(at 118.11 77.47 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1449,7 +1449,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "5k6"
 			(at 102.87 96.5199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1608,7 +1608,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "3k3"
 			(at 101.092 73.66 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1689,7 +1689,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1µ"
 			(at 78.74 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1770,7 +1770,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "100k"
 			(at 217.17 118.1099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1851,7 +1851,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "0µ1"
 			(at 124.46 119.38 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2029,7 +2029,7 @@
 				)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "12k"
 			(at 147.32 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2108,7 +2108,7 @@
 				)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "15k"
 			(at 104.394 116.586 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2188,7 +2188,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1µ"
 			(at 205.74 107.95 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2268,7 +2268,7 @@
 				)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "12k"
 			(at 134.62 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2348,7 +2348,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1n"
 			(at 160.02 95.25 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2507,7 +2507,7 @@
 				)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "1µ"
 			(at 91.44 86.36 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2575,7 +2575,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "9a6ad69c-22a8-4c6a-8eff-09b134e6a5d7")
 		(property "Reference" "R16"
 			(at 193.04 106.68 90)
@@ -2587,7 +2586,7 @@
 				)
 			)
 		)
-		(property "Value" "R_US"
+		(property "Value" "100R"
 			(at 193.04 109.22 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2766,7 +2765,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "C"
+		(property "Value" "470p"
 			(at 163.83 119.3799 0)
 			(show_name no)
 			(do_not_autoplace no)

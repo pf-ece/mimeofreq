@@ -5817,7 +5817,7 @@
 				)
 			)
 		)
-		(property "Value" "1µ"
+		(property "Value" "0µ1"
 			(at 38.1 140.97 90)
 			(show_name no)
 			(do_not_autoplace no)

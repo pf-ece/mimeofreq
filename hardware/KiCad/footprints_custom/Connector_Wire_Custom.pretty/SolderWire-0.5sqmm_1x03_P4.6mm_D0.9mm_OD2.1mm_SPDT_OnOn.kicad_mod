@@ -1,4 +1,4 @@
-(footprint "Potentiometer_P160KN"
+(footprint "SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_SPDT_OnOn"
 	(version 20260206)
 	(generator "pcbnew")
 	(generator_version "10.0")
@@ -7,7 +7,7 @@
 		(at 0 -0.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "9cd57ae9-171e-4171-9b03-6ce643155182")
+		(uuid "db495acb-95e3-40fb-813d-afbd6739b757")
 		(effects
 			(font
 				(size 1 1)
@@ -15,11 +15,11 @@
 			)
 		)
 	)
-	(property "Value" "Potentiometer_P160KN"
+	(property "Value" "SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_SPDT_OnOn"
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "e0044c8f-9c23-4645-98a6-464faed99039")
+		(uuid "4f9db911-c51a-4c05-bed3-abba4292b613")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "c5b619eb-8c06-4318-b4ec-83d1d59d71bf")
+		(uuid "4f8faa3b-a02d-44f1-9fa6-22f5933199e1")
 		(effects
 			(font
 				(size 1 1)
@@ -45,7 +45,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2ffd7d8e-c399-4bfc-ab90-1dc56625aec0")
+		(uuid "e8e90c36-66fc-42ed-9b51-4b59292116f8")
 		(effects
 			(font
 				(size 1 1)
@@ -64,7 +64,7 @@
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "18df97ea-9480-47c3-96c9-b61d9ddf1fc3")
+		(uuid "203e852f-5716-40f6-bc9a-4ff6d3824d7d")
 	)
 	(fp_rect
 		(start -6.725 -1.6)
@@ -75,13 +75,13 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "65345b3b-da64-4d4a-b00f-8995ee2f464e")
+		(uuid "fa5418bf-1c7c-4c4c-bc6a-b9724d816622")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 2.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "e0a626f4-8416-4bbf-bbd8-f6977d85dda1")
+		(uuid "bb4f0f9c-f185-4743-8973-edf0bb06e175")
 		(effects
 			(font
 				(size 1 1)
@@ -90,28 +90,28 @@
 		)
 	)
 	(pad "1" thru_hole circle
-		(at -5 0)
-		(size 2 2)
-		(drill 1.2)
+		(at -4.6 0)
+		(size 2.1 2.1)
+		(drill 1.15)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "a517c17e-10d8-4ce3-a6db-5978c5ac681d")
+		(uuid "a174a6cc-ada3-4a19-b3d0-c9c33714074f")
 	)
-	(pad "2" thru_hole circle
+	(pad "2" thru_hole rect
 		(at 0 0)
-		(size 2 2)
-		(drill 1.2)
+		(size 2.1 2.1)
+		(drill 1.15)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "666fd80f-0850-45d9-a366-e52b37955463")
+		(uuid "dc314f91-9b58-47a4-9373-a1872cd400ca")
 	)
-	(pad "3" thru_hole rect
-		(at 5 0)
-		(size 2 2)
-		(drill 1.2)
+	(pad "3" thru_hole circle
+		(at 4.6 0)
+		(size 2.1 2.1)
+		(drill 1.15)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "8d445a49-33a9-4aef-a596-2ea08923dfcb")
+		(uuid "dc23c0f5-f337-4c95-8f78-8ade05c9bddf")
 	)
 	(embedded_fonts no)
 )

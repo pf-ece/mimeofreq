@@ -4434,7 +4434,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Wire_Custom:SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_BarrelJack"
 			(at 220.98 30.226 0)
 			(hide yes)
 			(show_name no)
@@ -5950,7 +5950,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Wire_Custom:SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_SPDT_OnOn"
 			(at 154.94 175.26 0)
 			(hide yes)
 			(show_name no)
@@ -7383,7 +7383,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Electrosmith_Daisy_Seed_Rev4"
+		(property "Value" "Electrosmith_Daisy_Seed_Rev7"
 			(at 234.5533 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)

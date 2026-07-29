@@ -3454,7 +3454,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 85.09) (xy 118.11 85.09)
+			(xy 110.49 76.2) (xy 119.38 76.2)
 		)
 		(stroke
 			(width 0)
@@ -3684,7 +3684,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 91.44) (xy 86.36 91.44)
+			(xy 82.55 82.55) (xy 87.63 82.55)
 		)
 		(stroke
 			(width 0)
@@ -3764,7 +3764,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 54.61) (xy 114.3 54.61)
+			(xy 110.49 45.72) (xy 115.57 45.72)
 		)
 		(stroke
 			(width 0)
@@ -3814,7 +3814,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 60.96) (xy 86.36 60.96)
+			(xy 78.74 52.07) (xy 87.63 52.07)
 		)
 		(stroke
 			(width 0)
@@ -3853,7 +3853,7 @@
 		(uuid "02d81efa-2029-4a3c-b36f-84ce645889dd")
 	)
 	(label "IN"
-		(at 114.3 54.61 0)
+		(at 115.57 45.72 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3953,7 +3953,7 @@
 		(uuid "6c9e573f-7d84-4ee6-8fad-7e07e604a347")
 	)
 	(label "OUT"
-		(at 81.28 91.44 180)
+		(at 82.55 82.55 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4239,7 +4239,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT_Custom:Potentiometer_P160KN"
 			(at 116.84 172.72 0)
 			(hide yes)
 			(show_name no)
@@ -4517,7 +4517,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_THT:LED_D5.0mm"
 			(at 153.67 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -4686,7 +4686,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 161.036 126.746 90)
 			(hide yes)
 			(show_name no)
@@ -4971,7 +4971,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 118.11 87.63 270)
+		(at 119.38 78.74 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4982,7 +4982,7 @@
 		(fields_autoplaced yes)
 		(uuid "2993e5d8-f575-425d-9506-4b9a72337322")
 		(property "Reference" "#PWR06"
-			(at 111.76 87.63 0)
+			(at 113.03 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4993,7 +4993,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 114.3 87.6301 90)
+			(at 115.57 78.7401 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5004,7 +5004,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 118.11 87.63 0)
+			(at 119.38 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5015,7 +5015,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 118.11 87.63 0)
+			(at 119.38 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5026,7 +5026,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 118.11 87.63 0)
+			(at 119.38 78.74 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5082,7 +5082,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 60.706 160.274 90)
 			(hide yes)
 			(show_name no)
@@ -5318,7 +5318,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 161.544 137.414 90)
 			(hide yes)
 			(show_name no)
@@ -5400,7 +5400,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT_Custom:Potentiometer_P160KN"
 			(at 109.22 149.86 0)
 			(hide yes)
 			(show_name no)
@@ -5516,7 +5516,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_THT_Custom:C_Rect_L4.0mm_W2.6mm_P2.50mm"
 			(at 54.61 151.4348 0)
 			(hide yes)
 			(show_name no)
@@ -5566,7 +5566,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2")
-		(at 123.19 85.09 180)
+		(at 124.46 76.2 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5577,7 +5577,7 @@
 		(fields_autoplaced yes)
 		(uuid "46e64984-c07d-4b14-aa4d-015522641376")
 		(property "Reference" "J2"
-			(at 123.825 93.98 0)
+			(at 125.095 85.09 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5587,7 +5587,7 @@
 			)
 		)
 		(property "Value" "AudioJack2"
-			(at 123.825 91.44 0)
+			(at 125.095 82.55 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5596,8 +5596,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 123.19 85.09 0)
+		(property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm"
+			(at 124.46 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5608,7 +5608,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 123.19 85.09 0)
+			(at 124.46 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5619,7 +5619,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS)"
-			(at 123.19 85.09 0)
+			(at 124.46 76.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5756,7 +5756,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT_Custom:Potentiometer_P160KN"
 			(at 113.03 161.29 0)
 			(hide yes)
 			(show_name no)
@@ -6035,7 +6035,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal"
 			(at 60.706 145.034 90)
 			(hide yes)
 			(show_name no)
@@ -6117,7 +6117,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT_Custom:Potentiometer_P160KN"
 			(at 101.6 127 0)
 			(hide yes)
 			(show_name no)
@@ -6312,7 +6312,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm"
 			(at 154.94 152.4 0)
 			(hide yes)
 			(show_name no)
@@ -6392,7 +6392,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_THT:LED_D5.0mm"
 			(at 153.67 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -6532,7 +6532,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Audio:AudioJack2")
-		(at 72.39 60.96 0)
+		(at 73.66 52.07 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -6543,7 +6543,7 @@
 		(fields_autoplaced yes)
 		(uuid "8c869120-cec8-4553-a4f7-c2356f418eac")
 		(property "Reference" "J1"
-			(at 71.755 52.07 0)
+			(at 73.025 43.18 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6553,7 +6553,7 @@
 			)
 		)
 		(property "Value" "AudioJack2"
-			(at 71.755 54.61 0)
+			(at 73.025 45.72 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6562,8 +6562,8 @@
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 72.39 60.96 0)
+		(property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm"
+			(at 73.66 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6574,7 +6574,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 72.39 60.96 0)
+			(at 73.66 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6585,7 +6585,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 2 Poles (Mono / TS)"
-			(at 72.39 60.96 0)
+			(at 73.66 52.07 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6801,7 +6801,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Potentiometer_THT_Custom:Potentiometer_P160KN"
 			(at 105.41 138.43 0)
 			(hide yes)
 			(show_name no)
@@ -7234,7 +7234,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm"
 			(at 154.94 163.83 0)
 			(hide yes)
 			(show_name no)
@@ -7558,7 +7558,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 77.47 58.42 90)
+		(at 78.74 49.53 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7569,7 +7569,7 @@
 		(fields_autoplaced yes)
 		(uuid "eab6afdf-0b20-487d-9caa-c0f08ce99f81")
 		(property "Reference" "#PWR04"
-			(at 83.82 58.42 0)
+			(at 85.09 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7580,7 +7580,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 81.28 58.4199 90)
+			(at 82.55 49.5299 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7591,7 +7591,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 77.47 58.42 0)
+			(at 78.74 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7602,7 +7602,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 77.47 58.42 0)
+			(at 78.74 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7613,7 +7613,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 77.47 58.42 0)
+			(at 78.74 49.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7636,7 +7636,7 @@
 		)
 	)
 	(sheet
-		(at 86.36 50.8)
+		(at 87.63 41.91)
 		(size 22.86 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7652,7 +7652,7 @@
 		)
 		(uuid "5a5a17f9-5733-4e29-97e0-85beffe17bcf")
 		(property "Sheetname" "Input Buffer"
-			(at 86.36 50.0884 0)
+			(at 87.63 41.1984 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7663,7 +7663,7 @@
 			)
 		)
 		(property "Sheetfile" "input_buffer.kicad_sch"
-			(at 86.36 65.3546 0)
+			(at 87.63 56.4646 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7674,7 +7674,7 @@
 			)
 		)
 		(pin "JACK_IN" input
-			(at 86.36 60.96 180)
+			(at 87.63 52.07 180)
 			(uuid "3df403dc-e6af-4b55-aee7-574708fcbbe2")
 			(effects
 				(font
@@ -7684,7 +7684,7 @@
 			)
 		)
 		(pin "SEED_IN" output
-			(at 109.22 54.61 0)
+			(at 110.49 45.72 0)
 			(uuid "a6e177d5-4d63-4222-a5b9-a96930d8722f")
 			(effects
 				(font
@@ -7702,7 +7702,7 @@
 		)
 	)
 	(sheet
-		(at 86.36 81.28)
+		(at 87.63 72.39)
 		(size 22.86 13.97)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7718,7 +7718,7 @@
 		)
 		(uuid "cb3a069d-198c-4da3-9ecb-baa625ac1fdd")
 		(property "Sheetname" "Output Buffer"
-			(at 86.36 80.5684 0)
+			(at 87.63 71.6784 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7729,7 +7729,7 @@
 			)
 		)
 		(property "Sheetfile" "output_buffer.kicad_sch"
-			(at 86.36 95.8346 0)
+			(at 87.63 86.9446 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7740,7 +7740,7 @@
 			)
 		)
 		(pin "JACK_OUT" output
-			(at 109.22 85.09 0)
+			(at 110.49 76.2 0)
 			(uuid "dc42395d-df73-499a-9bbb-4b5e233fc24c")
 			(effects
 				(font
@@ -7750,7 +7750,7 @@
 			)
 		)
 		(pin "SEED_OUT" input
-			(at 86.36 91.44 180)
+			(at 87.63 82.55 180)
 			(uuid "473b0809-7416-49e6-8dab-49dfa70e14bf")
 			(effects
 				(font

@@ -1,0 +1,216 @@
+(footprint "C_Rect_L7.3mm_W4.5mm_P5.00mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "C, Rect series, Radial; Designed for B32529C0105x000 1uF PET film capacitor.")
+	(tags "B32529C0105J000 B32529C0105K000")
+	(property "Reference" "REF**"
+		(at 2.5 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "9fbf7524-90af-46c8-90f7-1b4d438a75c5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "CAP_B32529_04.5X09.5X07.3_TDK"
+		(at 2.5 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "5d34d416-63db-43a4-b0bf-b1b72b05e80c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "048caa46-1fe8-41c9-b58f-5150d9e92504")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6ccfd22e-ed15-46ed-860b-464317d4b1c9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(attr through_hole)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.2719 -2.3749)
+		(end -1.2719 2.3749)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "20c9cf06-d53f-4b30-a3bd-2920861930da")
+	)
+	(fp_line
+		(start 6.2719 -2.3749)
+		(end -1.2719 -2.3749)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2dc387f4-724e-43f0-9ce8-a270fc297a8f")
+	)
+	(fp_line
+		(start 6.2719 -2.3749)
+		(end 6.2719 2.3749)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "98e92214-d911-44fd-8013-f34308eef866")
+	)
+	(fp_line
+		(start 6.2719 2.3749)
+		(end -1.2719 2.3749)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "064b2e16-54e6-481e-b6d6-d7c2bad5586f")
+	)
+	(fp_line
+		(start -1.3989 -2.5019)
+		(end 6.3989 -2.5019)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "18a050c6-d77d-41f9-88ba-be8b44befdb5")
+	)
+	(fp_line
+		(start -1.3989 2.5019)
+		(end -1.3989 -2.5019)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "886748f5-370a-41d4-be1e-e5324afb9ec3")
+	)
+	(fp_line
+		(start 6.3989 -2.5019)
+		(end 6.3989 2.5019)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "cad7ae4f-1289-43e3-8f38-0c5959efbd1f")
+	)
+	(fp_line
+		(start 6.3989 2.5019)
+		(end -1.3989 2.5019)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "00119d80-c768-4db3-8442-d99dbfb04617")
+	)
+	(fp_line
+		(start -1.1449 -2.2479)
+		(end -1.1449 2.2479)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "d235ee32-f7ee-4f64-924c-7160d35d444e")
+	)
+	(fp_line
+		(start 6.1449 -2.2479)
+		(end -1.1449 -2.2479)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2fc398e9-db1a-4c21-a5b5-593cc3bc040f")
+	)
+	(fp_line
+		(start 6.1449 -2.2479)
+		(end 6.1449 2.2479)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "40a47d6f-6e1b-4ba1-90b6-102c0f0a1d72")
+	)
+	(fp_line
+		(start 6.1449 2.2479)
+		(end -1.1449 2.2479)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f5924f0e-1a1e-4805-92a3-bf517b02f897")
+	)
+	(fp_circle
+		(center -0.6369 0)
+		(end -0.6369 0)
+		(stroke
+			(width 0.0254)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "f2413706-8c80-45be-bf9d-71664ce8228f")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 2.5 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "6611405f-98be-4d30-bd3d-55da3fa535e6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole rect
+		(at 0 0)
+		(size 1.3208 1.3208)
+		(drill 0.8128)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "802bfc59-2bf2-4d4b-bf9d-4dca24ba65f4")
+	)
+	(pad "2" thru_hole circle
+		(at 5 0)
+		(size 1.3208 1.3208)
+		(drill 0.8128)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "29e98ed1-ac41-4c88-be15-e365615badf5")
+	)
+	(embedded_fonts no)
+)

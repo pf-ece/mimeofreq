@@ -3339,6 +3339,12 @@
 		(uuid "5ebfe7bb-ddcd-40d3-af29-ea459b3b4b66")
 	)
 	(junction
+		(at 227.33 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7cf0d0be-01c8-4aad-966c-a7f3749cd469")
+	)
+	(junction
 		(at 236.22 30.48)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4571,6 +4577,85 @@
 			(project "freq-fiche"
 				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e"
 					(reference "D2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:PWR_FLAG")
+		(at 227.33 55.88 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "18836586-af4f-4825-86ba-51170ae0989e")
+		(property "Reference" "#FLG03"
+			(at 225.425 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 223.52 55.8799 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 227.33 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 227.33 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 227.33 55.88 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "386c1fac-a1f8-4de7-93c0-e653a02d49dc")
+		)
+		(instances
+			(project "freq-fiche"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e"
+					(reference "#FLG03")
 					(unit 1)
 				)
 			)

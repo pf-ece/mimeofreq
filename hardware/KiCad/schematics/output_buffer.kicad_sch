@@ -1775,7 +1775,7 @@
 				)
 			)
 		)
-		(property "Value" "0µ1"
+		(property "Value" "100n"
 			(at 120.65 106.68 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2597,10 +2597,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "cc283a70-f973-4c96-860b-19d5baf8bf6c")
 		(property "Reference" "C10"
-			(at 160.02 104.1399 0)
+			(at 147.828 104.394 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2611,7 +2610,7 @@
 			)
 		)
 		(property "Value" "470p"
-			(at 160.02 106.6799 0)
+			(at 147.828 106.934 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\pisaa\\Documents\\KiCad\\10.0\\projects\\freq-fiche\\freq-fiche.kicad_sch")
-		(date "2026-08-01T16:10:27")
+		(date "2026-08-09T03:07:14")
 		(tool "Eeschema 10.0.0")
 		(sheet
 			(number "1")
@@ -1775,7 +1775,7 @@
 		)
 		(comp
 			(ref "R6")
-			(value "100k")
+			(value "1M5")
 			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
 			(description "Resistor, US symbol")
 			(fields
@@ -2345,7 +2345,7 @@
 		)
 		(comp
 			(ref "R10")
-			(value "15k")
+			(value "33k")
 			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
 			(description "Resistor, US symbol")
 			(fields
@@ -2399,7 +2399,7 @@
 		)
 		(comp
 			(ref "R11")
-			(value "150k")
+			(value "22k")
 			(footprint "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal")
 			(description "Resistor, US symbol")
 			(fields
@@ -3607,7 +3607,7 @@
 		(net
 			(code "1")
 			(name "+3V3")
-			(class "Default")
+			(class "Power")
 			(node
 				(ref "A1")
 				(pin "21")
@@ -3663,7 +3663,7 @@
 		(net
 			(code "2")
 			(name "+9V")
-			(class "Default")
+			(class "Power")
 			(node
 				(ref "D3")
 				(pin "2")
@@ -3684,7 +3684,7 @@
 		(net
 			(code "3")
 			(name "+9VCLEAN")
-			(class "Default")
+			(class "Power")
 			(node
 				(ref "A1")
 				(pin "39")

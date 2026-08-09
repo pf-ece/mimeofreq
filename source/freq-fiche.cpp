@@ -24,12 +24,16 @@ using namespace daisysp;
 #define POT_DEPTH A4
 
 // Bypass switch definitions
-#define SWITCH_DEL D1 // Change these assignments when ready
+#define SWITCH_DEL D1
 #define SWITCH_PHS D2
 
+// LED definitions
+#define LED_DEL D3
+#define LED_PHS D4
+
 // Combo switch definitions
-#define SPDT_A D10
-#define SPDT_B D12
+#define SPDT_A D9
+#define SPDT_B D10
 
 // ADC channel declarations
 enum AdcChannel {
@@ -63,8 +67,8 @@ static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del;
 static Heavy_phaser *phs = nullptr;
 
 // Block-size intermediate arrays
-static float delayed[2];
-static float phased[2];
+static float delayed[4];
+static float phased[4];
 
 // Low-pass filters
 static OnePole lpf;
@@ -75,6 +79,10 @@ static OnePole lpf_depth;
 Switch del_switch;
 Switch phs_switch;
 Switch3 spdt;
+
+// LED objects
+GPIO del_led;
+GPIO phs_led;
 
 // Bypass initializations
 bool del_bypass = true;
@@ -99,10 +107,10 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
             case 1:
                 // DELAY into PHASER
                 for(size_t i = 0; i < size; i++) {
-                        dry = in[0][i];
-                        wet = del.Read();
-                        del.Write(dry + (wet * feedback_lvl));
-                        delayed[i] = (dry * (1.0f - mix)) + (wet * mix);
+                    dry = in[0][i];
+                    wet = del.Read();
+                    del.Write(dry + (wet * feedback_lvl));
+                    delayed[i] = (dry * (1.0f - mix)) + (wet * mix);
                 }
                 phs->processInline(const_cast<float*>(delayed), out[0], (int)size);
                 break;
@@ -162,7 +170,7 @@ int main(void)
     float sample_rate;
     hw.Configure();
     hw.Init();
-    hw.SetAudioBlockSize(2);
+    hw.SetAudioBlockSize(4);
     sample_rate = hw.AudioSampleRate();
 
     initADC();
@@ -226,6 +234,9 @@ void initSwitch()
     del_switch.Init(SWITCH_DEL, hw.AudioSampleRate()/hw.AudioBlockSize());
     phs_switch.Init(SWITCH_PHS, hw.AudioSampleRate()/hw.AudioBlockSize());
 
+    del_led.Init(LED_DEL, GPIO::Mode::OUTPUT);
+    phs_led.Init(LED_PHS, GPIO::Mode::OUTPUT);
+
     spdt.Init(SPDT_A, SPDT_B);
 }
 
@@ -238,8 +249,10 @@ void procSwitch()
     phs_switch.Debounce();
     if(phs_switch.RisingEdge()) {
         phs_bypass = !phs_bypass;
-        hw.SetLed(!phs_bypass);
     }
+
+    del_led.Write(!del_bypass);
+    phs_led.Write(!phs_bypass);
 
     spdt_state = spdt.Read();
 }

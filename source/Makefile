@@ -1,8 +1,8 @@
 # Project Name
-TARGET = freq-fiche
+TARGET = mimeofreq
 
 # Sources
-CPP_SOURCES = freq-fiche.cpp \
+CPP_SOURCES = mimeofreq.cpp \
 			  phaser/Heavy_phaser.cpp \
 			  phaser/HeavyContext.cpp \
 			  phaser/HvHeavy.cpp

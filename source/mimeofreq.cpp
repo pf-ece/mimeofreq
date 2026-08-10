@@ -1,4 +1,4 @@
-/** freq-fiche.cpp | Implementation file for overall Freq-Fiche project.
+/** mimeofreq.cpp | Implementation file for overall Mimeofreq project.
  *  Author: Patrick F. (pf-ece)
  *  
  *  Copyright 2026 pf-ece

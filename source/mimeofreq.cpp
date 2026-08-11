@@ -165,11 +165,9 @@ static void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer
 
 int main(void)
 {
-    float sample_rate;
     hw.Configure();
     hw.Init();
     hw.SetAudioBlockSize(2);
-    sample_rate = hw.AudioSampleRate();
 
     initADC();
     initSwitch();
@@ -180,7 +178,7 @@ int main(void)
     lpf.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
     lpf.SetFrequency(0.001f);
     
-    phs = new Heavy_phaser(sample_rate);
+    phs = new Heavy_phaser(hw.AudioSampleRate());
 
     phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::RATE, 0.5f);
     phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::DEPTH, 0.5f);

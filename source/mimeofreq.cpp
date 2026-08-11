@@ -67,13 +67,11 @@ static DelayLine<float, MAX_DELAY> DSY_SDRAM_BSS del;
 static Heavy_phaser *phs = nullptr;
 
 // Block-size intermediate arrays
-static float delayed[4];
-static float phased[4];
+static float delayed[2];
+static float phased[2];
 
 // Low-pass filters
 static OnePole lpf;
-static OnePole lpf_rate;
-static OnePole lpf_depth;
 
 // Switch objects
 Switch del_switch;
@@ -170,7 +168,7 @@ int main(void)
     float sample_rate;
     hw.Configure();
     hw.Init();
-    hw.SetAudioBlockSize(4);
+    hw.SetAudioBlockSize(2);
     sample_rate = hw.AudioSampleRate();
 
     initADC();
@@ -181,14 +179,6 @@ int main(void)
     lpf.Init();
     lpf.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
     lpf.SetFrequency(0.001f);
-
-    lpf_rate.Init();
-    lpf_rate.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
-    lpf_rate.SetFrequency(0.001f);
-
-    lpf_depth.Init();
-    lpf_depth.SetFilterMode(OnePole::FilterMode::FILTER_MODE_LOW_PASS);
-    lpf_depth.SetFrequency(0.001f);
     
     phs = new Heavy_phaser(sample_rate);
 
@@ -219,8 +209,8 @@ void procADC()
     mix          = fmap(hw.adc.GetFloat(knobOne),   0.0f,  1.0f,  Mapping::LINEAR);
     feedback_lvl = fmap(hw.adc.GetFloat(knobTwo),   0.0f,  1.0f,  Mapping::LINEAR);
     delay_time   = fmap(hw.adc.GetFloat(knobThree), 0.05f, 1.0f,  Mapping::LINEAR);
-    rate         = lpf_rate.Process(fmap(hw.adc.GetFloat(knobFour),  0.01f, 10.0f,  Mapping::LOG));
-    depth        = lpf_depth.Process(fmap(hw.adc.GetFloat(knobFive),  0.0f,  1.0f,  Mapping::LINEAR));
+    rate         = fmap(hw.adc.GetFloat(knobFour),  0.01f, 10.0f,  Mapping::LOG);
+    depth        = fmap(hw.adc.GetFloat(knobFive),  0.0f,  1.0f,  Mapping::LINEAR);
 
     if(!phs_bypass) {
         phs->sendFloatToReceiver(Heavy_phaser::Parameter::In::ParameterIn::RATE, rate);

@@ -1,823 +1,1118 @@
-(kicad_sch 
-  (version 20260306) 
-  (generator "eeschema") 
-  (generator_version "10.0") 
-  (uuid "0f94ecd9-c05a-473d-9cb7-6c244374b934") 
-  (paper "A4") 
-  (lib_symbols 
-    (symbol "Device:C" 
-      (pin_numbers 
-        (hide yes)) 
-      (pin_names 
-        (offset 0.254)) 
-      (exclude_from_sim no) 
-      (in_bom yes) 
-      (on_board yes) 
-      (in_pos_files yes) 
-      (duplicate_pin_numbers_are_jumpers no) 
-      (property "Reference" "C" 
-        (at 0.635 2.54 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)) 
-          (justify left))) 
-      (property "Value" "C" 
-        (at 0.635 -2.54 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)) 
-          (justify left))) 
-      (property "Footprint" "" 
-        (at 0.9652 -3.81 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Datasheet" "" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Description" "Unpolarized capacitor" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_keywords" "cap capacitor" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_fp_filters" "C_*" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (symbol "C_0_1" 
-        (polyline 
-          (pts 
-            (xy -2.032 0.762) 
-            (xy 2.032 0.762)) 
-          (stroke 
-            (width 0.508) 
-            (type default)) 
-          (fill 
-            (type none))) 
-        (polyline 
-          (pts 
-            (xy -2.032 -0.762) 
-            (xy 2.032 -0.762)) 
-          (stroke 
-            (width 0.508) 
-            (type default)) 
-          (fill 
-            (type none)))) 
-      (symbol "C_1_1" 
-        (pin passive line 
-          (at 0 3.81 270) 
-          (length 2.794) 
-          (name "" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "1" 
-            (effects 
-              (font 
-                (size 1.27 1.27))))) 
-        (pin passive line 
-          (at 0 -3.81 90) 
-          (length 2.794) 
-          (name "" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "2" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))))) 
-      (embedded_fonts no)) 
-    (symbol "Device:C_Polarized_US" 
-      (pin_numbers 
-        (hide yes)) 
-      (pin_names 
-        (offset 0.254) 
-        (hide yes)) 
-      (exclude_from_sim no) 
-      (in_bom yes) 
-      (on_board yes) 
-      (in_pos_files yes) 
-      (duplicate_pin_numbers_are_jumpers no) 
-      (property "Reference" "C" 
-        (at 0.635 2.54 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)) 
-          (justify left))) 
-      (property "Value" "C_Polarized_US" 
-        (at 0.635 -2.54 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)) 
-          (justify left))) 
-      (property "Footprint" "" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Datasheet" "" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Description" "Polarized capacitor, US symbol" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_keywords" "cap capacitor" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_fp_filters" "CP_*" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (symbol "C_Polarized_US_0_1" 
-        (polyline 
-          (pts 
-            (xy -2.032 0.762) 
-            (xy 2.032 0.762)) 
-          (stroke 
-            (width 0.508) 
-            (type default)) 
-          (fill 
-            (type none))) 
-        (polyline 
-          (pts 
-            (xy -1.778 2.286) 
-            (xy -0.762 2.286)) 
-          (stroke 
-            (width 0) 
-            (type default)) 
-          (fill 
-            (type none))) 
-        (polyline 
-          (pts 
-            (xy -1.27 1.778) 
-            (xy -1.27 2.794)) 
-          (stroke 
-            (width 0) 
-            (type default)) 
-          (fill 
-            (type none))) 
-        (arc 
-          (start -2.032 -1.27) 
-          (mid 0 -0.5572) 
-          (end 2.032 -1.27) 
-          (stroke 
-            (width 0.508) 
-            (type default)) 
-          (fill 
-            (type none)))) 
-      (symbol "C_Polarized_US_1_1" 
-        (pin passive line 
-          (at 0 3.81 270) 
-          (length 2.794) 
-          (name "" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "1" 
-            (effects 
-              (font 
-                (size 1.27 1.27))))) 
-        (pin passive line 
-          (at 0 -3.81 90) 
-          (length 3.302) 
-          (name "" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "2" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))))) 
-      (embedded_fonts no)) 
-    (symbol "Diode:1N5817" 
-      (pin_numbers 
-        (hide yes)) 
-      (pin_names 
-        (offset 1.016) 
-        (hide yes)) 
-      (exclude_from_sim no) 
-      (in_bom yes) 
-      (on_board yes) 
-      (in_pos_files yes) 
-      (duplicate_pin_numbers_are_jumpers no) 
-      (property "Reference" "D" 
-        (at 0 2.54 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Value" "1N5817" 
-        (at 0 -2.54 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" 
-        (at 0 -4.445 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Description" "20V 1A Schottky Barrier Rectifier Diode, DO-41" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_keywords" "diode Schottky" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_fp_filters" "D*DO?41*" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (symbol "1N5817_0_1" 
-        (polyline 
-          (pts 
-            (xy -1.905 0.635) 
-            (xy -1.905 1.27) 
-            (xy -1.27 1.27) 
-            (xy -1.27 -1.27) 
-            (xy -0.635 -1.27) 
-            (xy -0.635 -0.635)) 
-          (stroke 
-            (width 0.254) 
-            (type default)) 
-          (fill 
-            (type none))) 
-        (polyline 
-          (pts 
-            (xy 1.27 1.27) 
-            (xy 1.27 -1.27) 
-            (xy -1.27 0) 
-            (xy 1.27 1.27)) 
-          (stroke 
-            (width 0.254) 
-            (type default)) 
-          (fill 
-            (type none))) 
-        (polyline 
-          (pts 
-            (xy 1.27 0) 
-            (xy -1.27 0)) 
-          (stroke 
-            (width 0) 
-            (type default)) 
-          (fill 
-            (type none)))) 
-      (symbol "1N5817_1_1" 
-        (pin passive line 
-          (at -3.81 0 0) 
-          (length 2.54) 
-          (name "K" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "1" 
-            (effects 
-              (font 
-                (size 1.27 1.27))))) 
-        (pin passive line 
-          (at 3.81 0 180) 
-          (length 2.54) 
-          (name "A" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "2" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))))) 
-      (embedded_fonts no)) 
-    (symbol "power:GND" 
-      (power global) 
-      (pin_numbers 
-        (hide yes)) 
-      (pin_names 
-        (offset 0) 
-        (hide yes)) 
-      (exclude_from_sim no) 
-      (in_bom yes) 
-      (on_board yes) 
-      (in_pos_files yes) 
-      (duplicate_pin_numbers_are_jumpers no) 
-      (property "Reference" "#PWR" 
-        (at 0 -6.35 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Value" "GND" 
-        (at 0 -3.81 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Footprint" "" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Datasheet" "" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "Description" "Power symbol creates a global label with name \"GND\" , ground" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (property "ki_keywords" "global power" 
-        (at 0 0 0) 
-        (show_name no) 
-        (do_not_autoplace no) 
-        (hide yes) 
-        (effects 
-          (font 
-            (size 1.27 1.27)))) 
-      (symbol "GND_0_1" 
-        (polyline 
-          (pts 
-            (xy 0 0) 
-            (xy 0 -1.27) 
-            (xy 1.27 -1.27) 
-            (xy 0 -2.54) 
-            (xy -1.27 -1.27) 
-            (xy 0 -1.27)) 
-          (stroke 
-            (width 0) 
-            (type default)) 
-          (fill 
-            (type none)))) 
-      (symbol "GND_1_1" 
-        (pin power_in line 
-          (at 0 0 270) 
-          (length 0) 
-          (name "" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))) 
-          (number "1" 
-            (effects 
-              (font 
-                (size 1.27 1.27)))))) 
-      (embedded_fonts no))) 
-  (junction 
-    (at 160.02 93.98) 
-    (diameter 0) 
-    (color 0 0 0 0) 
-    (uuid "0fc4fb21-f1d5-464b-99c6-2623aedbbf69")) 
-  (junction 
-    (at 147.32 93.98) 
-    (diameter 0) 
-    (color 0 0 0 0) 
-    (uuid "3aeda95c-a7b7-403b-a397-f9aeb76f3919")) 
-  (wire 
-    (pts 
-      (xy 140.97 93.98) 
-      (xy 147.32 93.98)) 
-    (stroke 
-      (width 0) 
-      (type default)) 
-    (uuid "4c1b19ba-fa67-43c2-853b-9044b1b75e0c")) 
-  (wire 
-    (pts 
-      (xy 160.02 93.98) 
-      (xy 165.1 93.98)) 
-    (stroke 
-      (width 0) 
-      (type default)) 
-    (uuid "684ef43a-1780-4123-8463-2ea5a9f00422")) 
-  (wire 
-    (pts 
-      (xy 147.32 93.98) 
-      (xy 147.32 97.79)) 
-    (stroke 
-      (width 0) 
-      (type default)) 
-    (uuid "883e5383-1aaa-4757-a2cd-8dce16822b87")) 
-  (wire 
-    (pts 
-      (xy 147.32 93.98) 
-      (xy 160.02 93.98)) 
-    (stroke 
-      (width 0) 
-      (type default)) 
-    (uuid "8e04bb46-1863-4d71-842b-399530f0db15")) 
-  (wire 
-    (pts 
-      (xy 128.27 93.98) 
-      (xy 133.35 93.98)) 
-    (stroke 
-      (width 0) 
-      (type default)) 
-    (uuid "da7e97ae-9a5f-4c2a-8117-9c3869b5a29d")) 
-  (wire 
-    (pts 
-      (xy 160.02 93.98) 
-      (xy 160.02 97.79)) 
-    (stroke 
-      (width 0) 
-      (type default)) 
-    (uuid "f8c088e5-ff26-4b32-8505-74812f9d872c")) 
-  (hierarchical_label "SEED" 
-    (shape output) 
-    (at 165.1 93.98 0) 
-    (effects 
-      (font 
-        (size 1.27 1.27)) 
-      (justify left)) 
-    (uuid "3f967177-e72e-4b0f-bedc-ec7f536e35fb")) 
-  (hierarchical_label "BARREL" 
-    (shape input) 
-    (at 128.27 93.98 180) 
-    (effects 
-      (font 
-        (size 1.27 1.27)) 
-      (justify right)) 
-    (uuid "80873b07-0757-44f3-b3e7-e3f34400154d")) 
-  (symbol 
-    (lib_id "Device:C") 
-    (at 160.02 101.6 0) 
-    (unit 1) 
-    (body_style 1) 
-    (exclude_from_sim no) 
-    (in_bom yes) 
-    (on_board yes) 
-    (in_pos_files yes) 
-    (dnp no) 
-    (fields_autoplaced yes) 
-    (uuid "2dac7ed3-1df9-4274-a516-43580ffcd03e") 
-    (property "Reference" "C13" 
-      (at 163.83 100.3299 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)) 
-        (justify left))) 
-    (property "Value" "100n" 
-      (at 163.83 102.8699 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)) 
-        (justify left))) 
-    (property "Footprint" "Capacitor_THT_Custom:C_Rect_L4.0mm_W2.6mm_P2.50mm" 
-      (at 160.9852 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Datasheet" "" 
-      (at 160.02 101.6 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Description" "Unpolarized capacitor" 
-      (at 160.02 101.6 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (pin "1" 
-      (uuid "edef51de-885e-4776-917b-d7bf16854e42")) 
-    (pin "2" 
-      (uuid "4b0695c1-ed11-4f1f-a125-08ea66850fe2")) 
-    (instances 
-      (project "mimeofreq" 
-        (path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382" 
-          (reference "C13") 
-          (unit 1))))) 
-  (symbol 
-    (lib_id "Device:C_Polarized_US") 
-    (at 147.32 101.6 0) 
-    (unit 1) 
-    (body_style 1) 
-    (exclude_from_sim no) 
-    (in_bom yes) 
-    (on_board yes) 
-    (in_pos_files yes) 
-    (dnp no) 
-    (uuid "73e11834-1bc4-41c9-8e28-d113207afb92") 
-    (property "Reference" "C12" 
-      (at 151.13 100.584 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)) 
-        (justify left))) 
-    (property "Value" "100μ" 
-      (at 151.13 103.124 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)) 
-        (justify left))) 
-    (property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" 
-      (at 147.32 101.6 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Datasheet" "" 
-      (at 147.32 101.6 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Description" "Polarized capacitor, US symbol" 
-      (at 147.32 101.6 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (pin "1" 
-      (uuid "2df9854f-5f33-44a0-b127-0a2f47da0e82")) 
-    (pin "2" 
-      (uuid "fc941869-b1a3-4f8e-a46c-7089261c39b4")) 
-    (instances 
-      (project "mimeofreq" 
-        (path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382" 
-          (reference "C12") 
-          (unit 1))))) 
-  (symbol 
-    (lib_id "power:GND") 
-    (at 147.32 105.41 0) 
-    (unit 1) 
-    (body_style 1) 
-    (exclude_from_sim no) 
-    (in_bom yes) 
-    (on_board yes) 
-    (in_pos_files yes) 
-    (dnp no) 
-    (fields_autoplaced yes) 
-    (uuid "a61097ea-70f3-434e-9be9-8d8382639382") 
-    (property "Reference" "#PWR027" 
-      (at 147.32 111.76 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Value" "GND" 
-      (at 147.32 110.49 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Footprint" "" 
-      (at 147.32 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Datasheet" "" 
-      (at 147.32 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Description" "Power symbol creates a global label with name \"GND\" , ground" 
-      (at 147.32 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (pin "1" 
-      (uuid "44cbac10-6ba6-4d05-9061-845de55b4b24")) 
-    (instances 
-      (project "mimeofreq" 
-        (path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382" 
-          (reference "#PWR027") 
-          (unit 1))))) 
-  (symbol 
-    (lib_id "Diode:1N5817") 
-    (at 137.16 93.98 180) 
-    (unit 1) 
-    (body_style 1) 
-    (exclude_from_sim no) 
-    (in_bom yes) 
-    (on_board yes) 
-    (in_pos_files yes) 
-    (dnp no) 
-    (fields_autoplaced yes) 
-    (uuid "dc1b9129-0df5-4067-a69d-7316a88e7064") 
-    (property "Reference" "D3" 
-      (at 137.4775 87.63 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Value" "1N5817" 
-      (at 137.4775 90.17 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" 
-      (at 137.16 89.535 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf" 
-      (at 137.16 93.98 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Description" "20V 1A Schottky Barrier Rectifier Diode, DO-41" 
-      (at 137.16 93.98 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (pin "2" 
-      (uuid "a22069d9-3989-4990-8550-e2e541988713")) 
-    (pin "1" 
-      (uuid "86260ac6-35d9-426f-80b1-56e10481c8ef")) 
-    (instances 
-      (project "mimeofreq" 
-        (path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382" 
-          (reference "D3") 
-          (unit 1))))) 
-  (symbol 
-    (lib_id "power:GND") 
-    (at 160.02 105.41 0) 
-    (unit 1) 
-    (body_style 1) 
-    (exclude_from_sim no) 
-    (in_bom yes) 
-    (on_board yes) 
-    (in_pos_files yes) 
-    (dnp no) 
-    (fields_autoplaced yes) 
-    (uuid "fc424881-9afb-46ef-861d-8f1c387b5728") 
-    (property "Reference" "#PWR028" 
-      (at 160.02 111.76 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Value" "GND" 
-      (at 160.02 110.49 0) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Footprint" "" 
-      (at 160.02 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Datasheet" "" 
-      (at 160.02 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (property "Description" "Power symbol creates a global label with name \"GND\" , ground" 
-      (at 160.02 105.41 0) 
-      (hide yes) 
-      (show_name no) 
-      (do_not_autoplace no) 
-      (effects 
-        (font 
-          (size 1.27 1.27)))) 
-    (pin "1" 
-      (uuid "d0ece118-cb5f-49eb-b219-5642170c221e")) 
-    (instances 
-      (project "mimeofreq" 
-        (path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382" 
-          (reference "#PWR028") 
-          (unit 1))))))
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "0f94ecd9-c05a-473d-9cb7-6c244374b934")
+	(paper "A4")
+	(lib_symbols
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Unpolarized capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "C_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C_Polarized_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C_Polarized_US"
+				(at 0.635 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Polarized capacitor, US symbol"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "cap capacitor"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "CP_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "C_Polarized_US_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.286) (xy -0.762 2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.778) (xy -1.27 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.032 -1.27)
+					(mid 0 -0.5572)
+					(end 2.032 -1.27)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "C_Polarized_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 3.302)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Diode:1N5817"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "1N5817"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+				(at 0 -4.445 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "20V 1A Schottky Barrier Rectifier Diode, DO-41"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "diode Schottky"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "D*DO?41*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "1N5817_0_1"
+				(polyline
+					(pts
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1N5817_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(junction
+		(at 160.02 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0fc4fb21-f1d5-464b-99c6-2623aedbbf69")
+	)
+	(junction
+		(at 147.32 93.98)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3aeda95c-a7b7-403b-a397-f9aeb76f3919")
+	)
+	(wire
+		(pts
+			(xy 140.97 93.98) (xy 147.32 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c1b19ba-fa67-43c2-853b-9044b1b75e0c")
+	)
+	(wire
+		(pts
+			(xy 160.02 93.98) (xy 165.1 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "684ef43a-1780-4123-8463-2ea5a9f00422")
+	)
+	(wire
+		(pts
+			(xy 147.32 93.98) (xy 147.32 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "883e5383-1aaa-4757-a2cd-8dce16822b87")
+	)
+	(wire
+		(pts
+			(xy 147.32 93.98) (xy 160.02 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e04bb46-1863-4d71-842b-399530f0db15")
+	)
+	(wire
+		(pts
+			(xy 128.27 93.98) (xy 133.35 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da7e97ae-9a5f-4c2a-8117-9c3869b5a29d")
+	)
+	(wire
+		(pts
+			(xy 160.02 93.98) (xy 160.02 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8c088e5-ff26-4b32-8505-74812f9d872c")
+	)
+	(hierarchical_label "SEED"
+		(shape output)
+		(at 165.1 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3f967177-e72e-4b0f-bedc-ec7f536e35fb")
+	)
+	(hierarchical_label "BARREL"
+		(shape input)
+		(at 128.27 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "80873b07-0757-44f3-b3e7-e3f34400154d")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 160.02 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2dac7ed3-1df9-4274-a516-43580ffcd03e")
+		(property "Reference" "C13"
+			(at 163.83 100.3299 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100n"
+			(at 163.83 102.8699 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT_Custom:C_Rect_L4.0mm_W2.6mm_P2.50mm"
+			(at 160.9852 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 160.02 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "edef51de-885e-4776-917b-d7bf16854e42")
+		)
+		(pin "2"
+			(uuid "4b0695c1-ed11-4f1f-a125-08ea66850fe2")
+		)
+		(instances
+			(project "mimeofreq"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382"
+					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Polarized_US")
+		(at 147.32 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "73e11834-1bc4-41c9-8e28-d113207afb92")
+		(property "Reference" "C12"
+			(at 151.13 100.584 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100μ"
+			(at 151.13 103.124 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm"
+			(at 147.32 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Polarized capacitor, US symbol"
+			(at 147.32 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2df9854f-5f33-44a0-b127-0a2f47da0e82")
+		)
+		(pin "2"
+			(uuid "fc941869-b1a3-4f8e-a46c-7089261c39b4")
+		)
+		(instances
+			(project "mimeofreq"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a61097ea-70f3-434e-9be9-8d8382639382")
+		(property "Reference" "#PWR027"
+			(at 147.32 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 147.32 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 147.32 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "44cbac10-6ba6-4d05-9061-845de55b4b24")
+		)
+		(instances
+			(project "mimeofreq"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Diode:1N5817")
+		(at 137.16 93.98 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dc1b9129-0df5-4067-a69d-7316a88e7064")
+		(property "Reference" "D3"
+			(at 137.4775 87.63 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N5817"
+			(at 137.4775 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
+			(at 137.16 89.535 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
+			(at 137.16 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "20V 1A Schottky Barrier Rectifier Diode, DO-41"
+			(at 137.16 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "a22069d9-3989-4990-8550-e2e541988713")
+		)
+		(pin "1"
+			(uuid "86260ac6-35d9-426f-80b1-56e10481c8ef")
+		)
+		(instances
+			(project "mimeofreq"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 160.02 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc424881-9afb-46ef-861d-8f1c387b5728")
+		(property "Reference" "#PWR028"
+			(at 160.02 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 160.02 110.49 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 160.02 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 160.02 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 160.02 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d0ece118-cb5f-49eb-b219-5642170c221e")
+		)
+		(instances
+			(project "mimeofreq"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e/f048f55e-d28d-4256-9726-17b2441cb382"
+					(reference "#PWR028")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

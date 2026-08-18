@@ -374,7 +374,7 @@
 	(footprint "Capacitor_THT_Custom:C_Rect_L4.0mm_W2.6mm_P2.50mm"
 		(layer "F.Cu")
 		(uuid "0c9e68a9-f426-4a0f-937f-25feda1c3c18")
-		(at 52.7941 125.9156)
+		(at 151 85.19)
 		(descr "C, Rect series, Radial; Designed for K104x15X7RF5xxx 0.1uF X7R ceramic capacitor.")
 		(tags "K104K15X7RF5TL2 ")
 		(property "Reference" "C8"
@@ -614,7 +614,7 @@
 			(drill 0.8128)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(U2C-V+)")
+			(net "GND")
 			(pintype "passive")
 			(uuid "9f4732fc-e8e7-412e-8d39-883ae0d7e3cc")
 		)
@@ -1605,7 +1605,7 @@
 	(footprint "Package_DIP:DIP-8_W7.62mm"
 		(layer "F.Cu")
 		(uuid "37b3891c-6925-4685-b013-9f2abd352498")
-		(at 71.225 118.175)
+		(at 140.195 63.69)
 		(descr "8-lead though-hole mounted DIP package, row spacing 7.62mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
 		(property "Reference" "U1"
@@ -1818,7 +1818,7 @@
 			)
 		)
 		(point
-			(at 75.035 121.985)
+			(at 144.005 67.5)
 			(size 1.27)
 			(layer "F.Fab")
 			(uuid "735abe97-2ac1-41d9-8fda-eff4e0838152")
@@ -1905,7 +1905,7 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(U1C-V+)")
+			(net "+3V3")
 			(pinfunction "V+_8")
 			(pintype "power_in")
 			(uuid "8672c67e-88a0-4304-b646-bd080b02cfce")
@@ -1926,14 +1926,14 @@
 	(footprint "Capacitor_THT_Custom:C_Rect_L4.0mm_W2.6mm_P2.50mm"
 		(layer "F.Cu")
 		(uuid "37fd150d-466d-466a-8a92-7876ea41a807")
-		(at 76.8641 106.1056)
+		(at 151 63.7)
 		(descr "C, Rect series, Radial; Designed for K104x15X7RF5xxx 0.1uF X7R ceramic capacitor.")
 		(tags "K104K15X7RF5TL2 ")
 		(property "Reference" "C4"
 			(at 1.25 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
-			(uuid "1666be39-e128-4eeb-a821-e90b6803a1bb")
+			(uuid "9825ca6c-672e-4d5d-8fe3-1229138ae798")
 			(effects
 				(font
 					(size 1 1)
@@ -1945,7 +1945,7 @@
 			(at 1.25 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "26cafad1-545d-4df6-8067-a546a7965f22")
+			(uuid "564c21e3-719e-47b6-87f2-6145f307d4ad")
 			(effects
 				(font
 					(size 1 1)
@@ -1957,7 +1957,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e834184f-bed6-4f06-b3b8-365d998df136")
+			(uuid "9f49cf58-5b3e-4c50-8996-bdb35dbbc4a8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1968,7 +1968,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "100e6248-5559-489a-839d-ae7cb7840844")
+			(uuid "273482a0-b86c-4851-a1ac-6e74ded51a66")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2166,7 +2166,7 @@
 			(drill 0.8128)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(U1C-V+)")
+			(net "GND")
 			(pintype "passive")
 			(uuid "0c86f253-955b-46d2-bb2a-765b5a9268c5")
 		)
@@ -8794,7 +8794,7 @@
 	(footprint "Package_DIP:DIP-8_W7.62mm"
 		(layer "F.Cu")
 		(uuid "cbb7b95d-8568-4567-ad17-d19ea8dfdb69")
-		(at 43.855 106.025)
+		(at 140.195 85.19)
 		(descr "8-lead though-hole mounted DIP package, row spacing 7.62mm (300 mils)")
 		(tags "THT DIP DIL PDIP 2.54mm 7.62mm 300mil")
 		(property "Reference" "U2"
@@ -9007,7 +9007,7 @@
 			)
 		)
 		(point
-			(at 47.665 109.835)
+			(at 144.005 89)
 			(size 1.27)
 			(layer "F.Fab")
 			(uuid "29081a6f-9fed-4516-89e1-a4e8a2296f14")
@@ -9094,7 +9094,7 @@
 			(drill 0.8)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net "Net-(U2C-V+)")
+			(net "+3V3")
 			(pinfunction "V+_8")
 			(pintype "power_in")
 			(uuid "8124351e-9b2b-4a33-b7a1-c39d5bf9a41f")
@@ -10865,7 +10865,7 @@
 		(property "Reference" "A1"
 			(at 7.62 -3.6 90)
 			(layer "F.SilkS")
-			(uuid "5b7660b3-8577-434b-b6bc-0f93df567935")
+			(uuid "87fedb01-af6a-4798-9eab-321ecdd14091")
 			(effects
 				(font
 					(size 1 1)
@@ -10876,7 +10876,7 @@
 		(property "Value" "Electrosmith_Daisy_Seed_Rev7"
 			(at 7.62 51 90)
 			(layer "F.Fab")
-			(uuid "a2a1c8ef-4fe9-4da2-99bf-7c50688f2d4f")
+			(uuid "9b499883-66f6-4750-9084-dc4bfec6586e")
 			(effects
 				(font
 					(size 1 1)
@@ -10889,7 +10889,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ca67357c-67e8-4d8f-a506-a13cf0f99e0f")
+			(uuid "9ad08949-8c9b-48ba-9389-b7cf8915b1c7")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10902,7 +10902,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "0bd9d90d-7a51-4ba6-be0d-b39a3ff080fd")
+			(uuid "a497811f-376e-486c-b808-d858f8ff90c7")
 			(effects
 				(font
 					(size 1.27 1.27)

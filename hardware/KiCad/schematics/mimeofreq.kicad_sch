@@ -5,9 +5,9 @@
 	(uuid "fc444d3c-3a1a-4715-bcff-119f4d2b4d9e")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:Barrel_Jack_Switch_Pin3Ring"
+		(symbol "Connector:Jack-DC"
 			(pin_names
-				(hide yes)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -24,7 +24,7 @@
 					)
 				)
 			)
-			(property "Value" "Barrel_Jack_Switch_Pin3Ring"
+			(property "Value" "Jack-DC"
 				(at 0 -5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -56,7 +56,7 @@
 					)
 				)
 			)
-			(property "Description" "DC Barrel Jack with an internal switch"
+			(property "Description" "DC Barrel Jack"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -89,7 +89,7 @@
 					)
 				)
 			)
-			(symbol "Barrel_Jack_Switch_Pin3Ring_0_1"
+			(symbol "Jack-DC_0_1"
 				(rectangle
 					(start -5.08 3.81)
 					(end 5.08 -3.81)
@@ -137,18 +137,6 @@
 						(type outline)
 					)
 				)
-				(polyline
-					(pts
-						(xy 1.27 -2.286) (xy 1.905 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(rectangle
 					(start 3.683 3.175)
 					(end -3.302 1.905)
@@ -172,20 +160,8 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 5.08 0) (xy 1.27 0) (xy 1.27 -2.286) (xy 0.635 -1.651)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 			)
-			(symbol "Barrel_Jack_Switch_Pin3Ring_1_1"
+			(symbol "Jack-DC_1_1"
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
@@ -205,24 +181,6 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 0 180)
-					(length 2.54)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
 					(at 7.62 -2.54 180)
 					(length 2.54)
 					(name ""
@@ -232,7 +190,7 @@
 							)
 						)
 					)
-					(number "3"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3125,7 +3083,7 @@
 		(uuid "063134c6-412b-4cb8-b8b6-50125e07cdca")
 	)
 	(junction
-		(at 238.76 40.64)
+		(at 238.76 41.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "10660c28-5e05-478b-aa3b-1088ce0c2c4f")
@@ -3177,12 +3135,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5ebfe7bb-ddcd-40d3-af29-ea459b3b4b66")
-	)
-	(junction
-		(at 236.22 40.64)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "943584aa-1801-43df-87bc-3e7794df65af")
 	)
 	(junction
 		(at 135.89 62.23)
@@ -3324,6 +3276,16 @@
 	)
 	(wire
 		(pts
+			(xy 227.33 41.91) (xy 240.03 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a9920e9-4361-4e99-8855-ca9f0fbf4033")
+	)
+	(wire
+		(pts
 			(xy 135.89 62.23) (xy 135.89 66.04)
 		)
 		(stroke
@@ -3374,16 +3336,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 39.37) (xy 236.22 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "39ca40d9-94f7-4699-83e5-c7c1c6261c4f")
-	)
-	(wire
-		(pts
 			(xy 69.85 142.24) (xy 86.36 142.24)
 		)
 		(stroke
@@ -3411,16 +3363,6 @@
 			(type default)
 		)
 		(uuid "41789a82-087c-4ebc-a7d1-94ef37a36528")
-	)
-	(wire
-		(pts
-			(xy 236.22 40.64) (xy 236.22 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "433cfdb9-f2bc-473b-850b-3736f3986ba5")
 	)
 	(wire
 		(pts
@@ -3491,16 +3433,6 @@
 			(type default)
 		)
 		(uuid "6261750a-0c62-4732-aedb-8329f8139389")
-	)
-	(wire
-		(pts
-			(xy 236.22 40.64) (xy 240.03 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64e7464b-1d4f-43b8-9023-cb4b1be7d848")
 	)
 	(wire
 		(pts
@@ -3664,16 +3596,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 41.91) (xy 227.33 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9f6b5bf-f6c5-4ffa-9b9e-fe45bc5ad7e3")
-	)
-	(wire
-		(pts
 			(xy 66.04 130.81) (xy 86.36 130.81)
 		)
 		(stroke
@@ -3711,16 +3633,6 @@
 			(type default)
 		)
 		(uuid "f0c08b88-d48d-42c1-b26e-97c4810141c1")
-	)
-	(wire
-		(pts
-			(xy 227.33 39.37) (xy 236.22 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f9e1f8e9-83c9-4b82-8be9-6fcb1ee36c93")
 	)
 	(label "FS2"
 		(at 255.27 121.92 0)
@@ -4056,7 +3968,7 @@
 	)
 	(symbol
 		(lib_id "power:+9V")
-		(at 240.03 40.64 270)
+		(at 240.03 41.91 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4067,7 +3979,7 @@
 		(fields_autoplaced yes)
 		(uuid "08b6743e-5ba4-4163-afa8-f2df72888503")
 		(property "Reference" "#PWR018"
-			(at 236.22 40.64 0)
+			(at 236.22 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4078,7 +3990,7 @@
 			)
 		)
 		(property "Value" "+9V"
-			(at 243.84 40.6399 90)
+			(at 243.84 41.9099 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4089,7 +4001,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 240.03 40.64 0)
+			(at 240.03 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4100,7 +4012,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 240.03 40.64 0)
+			(at 240.03 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4111,7 +4023,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+9V\""
-			(at 240.03 40.64 0)
+			(at 240.03 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4325,89 +4237,6 @@
 			(project "mimeofreq"
 				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e"
 					(reference "#PWR011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Barrel_Jack_Switch_Pin3Ring")
-		(at 219.71 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "0fa1581c-8c0d-42d2-9a6a-57c4d90d9639")
-		(property "Reference" "J3"
-			(at 219.71 30.48 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Barrel_Jack_Switch_Pin3Ring"
-			(at 219.71 33.02 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_Wire_Custom:SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_BarrelJack"
-			(at 220.98 40.386 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 220.98 40.386 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "DC Barrel Jack with an internal switch"
-			(at 219.71 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "886c513d-70e8-4436-b0a8-b677ae600a52")
-		)
-		(pin "3"
-			(uuid "471c766b-f4d7-4887-9d4c-249e9e2b69ca")
-		)
-		(pin "2"
-			(uuid "4b1a4cfb-04b2-424b-8793-7c625731a9bd")
-		)
-		(instances
-			(project "mimeofreq"
-				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e"
-					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -5217,7 +5046,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 238.76 40.64 180)
+		(at 238.76 41.91 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5228,7 +5057,7 @@
 		(fields_autoplaced yes)
 		(uuid "381ce663-3f28-419e-9d4a-2e2883b5a9a9")
 		(property "Reference" "#FLG03"
-			(at 238.76 42.545 0)
+			(at 238.76 43.815 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5239,7 +5068,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 238.76 45.72 0)
+			(at 238.76 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5249,7 +5078,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 40.64 0)
+			(at 238.76 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5260,7 +5089,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 40.64 0)
+			(at 238.76 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5271,7 +5100,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 238.76 40.64 0)
+			(at 238.76 41.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5920,6 +5749,86 @@
 			(project "mimeofreq"
 				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e"
 					(reference "#PWR03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Jack-DC")
+		(at 219.71 39.37 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6904507f-d732-4f61-bd34-269023627350")
+		(property "Reference" "J3"
+			(at 219.71 30.48 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Jack-DC"
+			(at 219.71 33.02 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm"
+			(at 220.98 40.386 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 220.98 40.386 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "DC Barrel Jack"
+			(at 219.71 39.37 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "d382e5f5-1396-4429-800b-6e9262453029")
+		)
+		(pin "1"
+			(uuid "445442eb-0826-4e5a-8983-b43117b55c18")
+		)
+		(instances
+			(project "mimeofreq"
+				(path "/fc444d3c-3a1a-4715-bcff-119f4d2b4d9e"
+					(reference "J3")
 					(unit 1)
 				)
 			)

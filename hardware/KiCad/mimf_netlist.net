@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\pisaa\\Documents\\KiCad\\10.0\\projects\\mimeofreq\\mimeofreq.kicad_sch")
-		(date "2026-08-12T14:25:41")
+		(date "2026-08-18T03:39:36")
 		(tool "Eeschema 10.0.0")
 		(sheet
 			(number "1")
@@ -650,22 +650,22 @@
 		)
 		(comp
 			(ref "J3")
-			(value "Barrel_Jack_Switch_Pin3Ring")
-			(footprint "Connector_Wire_Custom:SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_BarrelJack")
-			(description "DC Barrel Jack with an internal switch")
+			(value "Jack-DC")
+			(footprint "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm")
+			(description "DC Barrel Jack")
 			(fields
 				(field
-					(name "Footprint") "Connector_Wire_Custom:SolderWire-0.5sqmm_1x03_P4.6mm_D0.9mm_OD2.1mm_BarrelJack")
+					(name "Footprint") "Connector_Wire:SolderWire-0.5sqmm_1x02_P4.6mm_D0.9mm_OD2.1mm")
 				(field
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "DC Barrel Jack with an internal switch")
+					(name "Description") "DC Barrel Jack")
 			)
 			(libsource
 				(lib "Connector")
-				(part "Barrel_Jack_Switch_Pin3Ring")
-				(description "DC Barrel Jack with an internal switch")
+				(part "Jack-DC")
+				(description "DC Barrel Jack")
 			)
 			(property
 				(name "Sheetname")
@@ -687,7 +687,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0fa1581c-8c0d-42d2-9a6a-57c4d90d9639")
+			(tstamps "6904507f-d732-4f61-bd34-269023627350")
 			(units
 				(unit
 					(name "A")
@@ -697,9 +697,6 @@
 						)
 						(pin
 							(num "2")
-						)
-						(pin
-							(num "3")
 						)
 					)
 				)
@@ -2993,8 +2990,8 @@
 		)
 		(libpart
 			(lib "Connector")
-			(part "Barrel_Jack_Switch_Pin3Ring")
-			(description "DC Barrel Jack with an internal switch")
+			(part "Jack-DC")
+			(description "DC Barrel Jack")
 			(footprints
 				(fp "BarrelJack*")
 			)
@@ -3002,7 +2999,7 @@
 				(field
 					(name "Reference") "J")
 				(field
-					(name "Value") "Barrel_Jack_Switch_Pin3Ring")
+					(name "Value") "Jack-DC")
 				(field
 					(name "Footprint")
 				)
@@ -3010,7 +3007,7 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "DC Barrel Jack with an internal switch")
+					(name "Description") "DC Barrel Jack")
 			)
 			(pins
 				(pin
@@ -3020,11 +3017,6 @@
 				)
 				(pin
 					(num "2")
-					(name "")
-					(type "passive")
-				)
-				(pin
-					(num "3")
 					(name "")
 					(type "passive")
 				)
@@ -3659,6 +3651,18 @@
 				(pinfunction "1_1")
 				(pintype "passive")
 			)
+			(node
+				(ref "U1")
+				(pin "8")
+				(pinfunction "V+_8")
+				(pintype "power_in")
+			)
+			(node
+				(ref "U2")
+				(pin "8")
+				(pinfunction "V+_8")
+				(pintype "power_in")
+			)
 		)
 		(net
 			(code "2")
@@ -3673,11 +3677,6 @@
 			(node
 				(ref "J3")
 				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "J3")
-				(pin "3")
 				(pintype "passive")
 			)
 		)
@@ -4007,7 +4006,17 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "C4")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "C6")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "C8")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -4336,22 +4345,6 @@
 		)
 		(net
 			(code "32")
-			(name "Net-(U1C-V+)")
-			(class "Default")
-			(node
-				(ref "C4")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U1")
-				(pin "8")
-				(pinfunction "V+_8")
-				(pintype "power_in")
-			)
-		)
-		(net
-			(code "33")
 			(name "Net-(U2A--)")
 			(class "Default")
 			(node
@@ -4372,7 +4365,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "33")
 			(name "Net-(U2B-+)")
 			(class "Default")
 			(node
@@ -4393,7 +4386,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "34")
 			(name "Net-(U2B--)")
 			(class "Default")
 			(node
@@ -4419,23 +4412,7 @@
 			)
 		)
 		(net
-			(code "36")
-			(name "Net-(U2C-V+)")
-			(class "Default")
-			(node
-				(ref "C8")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U2")
-				(pin "8")
-				(pinfunction "V+_8")
-				(pintype "power_in")
-			)
-		)
-		(net
-			(code "37")
+			(code "35")
 			(name "VGND")
 			(class "Default")
 			(node
@@ -4467,7 +4444,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "36")
 			(name "unconnected-(A1-3V3_D-Pad38)")
 			(class "Default")
 			(node
@@ -4478,7 +4455,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "37")
 			(name "unconnected-(A1-ADC_5-Pad27)")
 			(class "Default")
 			(node
@@ -4489,7 +4466,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "38")
 			(name "unconnected-(A1-ADC_6-Pad28)")
 			(class "Default")
 			(node
@@ -4500,7 +4477,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "39")
 			(name "unconnected-(A1-AUDIO_IN_2-Pad17)")
 			(class "Default")
 			(node
@@ -4511,7 +4488,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "40")
 			(name "unconnected-(A1-AUDIO_OUT_2-Pad19)")
 			(class "Default")
 			(node
@@ -4522,7 +4499,7 @@
 			)
 		)
 		(net
-			(code "43")
+			(code "41")
 			(name "unconnected-(A1-DAC_OUT1-Pad30)")
 			(class "Default")
 			(node
@@ -4533,7 +4510,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "42")
 			(name "unconnected-(A1-DAC_OUT2-Pad29)")
 			(class "Default")
 			(node
@@ -4544,7 +4521,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "43")
 			(name "unconnected-(A1-I2C1_SCL-Pad12)")
 			(class "Default")
 			(node
@@ -4555,7 +4532,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "44")
 			(name "unconnected-(A1-I2C1_SDA-Pad13)")
 			(class "Default")
 			(node
@@ -4566,7 +4543,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "45")
 			(name "unconnected-(A1-SAI2_FS-Pad34)")
 			(class "Default")
 			(node
@@ -4577,7 +4554,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "46")
 			(name "unconnected-(A1-SAI2_MCLK-Pad31)")
 			(class "Default")
 			(node
@@ -4588,7 +4565,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "47")
 			(name "unconnected-(A1-SAI2_SCK-Pad35)")
 			(class "Default")
 			(node
@@ -4599,7 +4576,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "48")
 			(name "unconnected-(A1-SAI2_SD_A-Pad33)")
 			(class "Default")
 			(node
@@ -4610,7 +4587,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "49")
 			(name "unconnected-(A1-SAI2_SD_B-Pad32)")
 			(class "Default")
 			(node
@@ -4621,7 +4598,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "50")
 			(name "unconnected-(A1-SD_CLK-Pad7)")
 			(class "Default")
 			(node
@@ -4632,7 +4609,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "51")
 			(name "unconnected-(A1-SD_CMD-Pad6)")
 			(class "Default")
 			(node
@@ -4643,7 +4620,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "52")
 			(name "unconnected-(A1-SPI1_CS-Pad8)")
 			(class "Default")
 			(node
@@ -4654,7 +4631,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "53")
 			(name "unconnected-(A1-SPI1_SCK-Pad9)")
 			(class "Default")
 			(node
@@ -4665,7 +4642,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "54")
 			(name "unconnected-(A1-USART1_RX-Pad15)")
 			(class "Default")
 			(node
@@ -4676,7 +4653,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "55")
 			(name "unconnected-(A1-USART1_TX-Pad14)")
 			(class "Default")
 			(node
@@ -4687,7 +4664,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "56")
 			(name "unconnected-(A1-USB_D_+-Pad37)")
 			(class "Default")
 			(node
@@ -4698,7 +4675,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "57")
 			(name "unconnected-(A1-USB_D_--Pad36)")
 			(class "Default")
 			(node
@@ -4709,7 +4686,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "58")
 			(name "unconnected-(A1-USB_ID-Pad1)")
 			(class "Default")
 			(node

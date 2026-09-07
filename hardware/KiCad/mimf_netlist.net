@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\pisaa\\Documents\\KiCad\\10.0\\projects\\mimeofreq\\mimeofreq.kicad_sch")
-		(date "2026-08-18T03:39:36")
+		(date "2026-09-07T13:02:12")
 		(tool "Eeschema 10.0.0")
 		(sheet
 			(number "1")
@@ -1503,11 +1503,11 @@
 		(comp
 			(ref "C3")
 			(value "10µ")
-			(footprint "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
+			(footprint "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm")
 			(description "Unpolarized capacitor")
 			(fields
 				(field
-					(name "Footprint") "Capacitor_THT:C_Rect_L7.0mm_W2.5mm_P5.00mm")
+					(name "Footprint") "Capacitor_THT:C_Rect_L4.0mm_W2.5mm_P2.50mm")
 				(field
 					(name "Datasheet")
 				)
@@ -2859,12 +2859,12 @@
 		(comp
 			(ref "D3")
 			(value "1N5817")
-			(footprint "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal")
+			(footprint "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal")
 			(datasheet "http://www.vishay.com/docs/88525/1n5817.pdf")
 			(description "20V 1A Schottky Barrier Rectifier Diode, DO-41")
 			(fields
 				(field
-					(name "Footprint") "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal")
+					(name "Footprint") "Diode_THT:D_DO-41_SOD81_P7.62mm_Horizontal")
 				(field
 					(name "Datasheet") "http://www.vishay.com/docs/88525/1n5817.pdf")
 				(field
@@ -3851,8 +3851,8 @@
 			(class "Default")
 			(node
 				(ref "A1")
-				(pin "22")
-				(pinfunction "ADC_0_22")
+				(pin "26")
+				(pinfunction "ADC_4_26")
 				(pintype "bidirectional")
 			)
 			(node
@@ -3868,8 +3868,8 @@
 			(class "Default")
 			(node
 				(ref "A1")
-				(pin "23")
-				(pinfunction "ADC_1_23")
+				(pin "25")
+				(pinfunction "ADC_3_25")
 				(pintype "bidirectional")
 			)
 			(node
@@ -3902,8 +3902,8 @@
 			(class "Default")
 			(node
 				(ref "A1")
-				(pin "25")
-				(pinfunction "ADC_3_25")
+				(pin "23")
+				(pinfunction "ADC_1_23")
 				(pintype "bidirectional")
 			)
 			(node
@@ -3919,8 +3919,8 @@
 			(class "Default")
 			(node
 				(ref "A1")
-				(pin "26")
-				(pinfunction "ADC_4_26")
+				(pin "22")
+				(pinfunction "ADC_0_22")
 				(pintype "bidirectional")
 			)
 			(node
